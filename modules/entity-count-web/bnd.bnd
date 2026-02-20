@@ -1,0 +1,7 @@
+Bundle-Name: entity-count-web
+Bundle-SymbolicName: com.ignek.entity.count
+Bundle-Version: 1.0.0
+Export-Package: com.ignek.entity.count.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"
