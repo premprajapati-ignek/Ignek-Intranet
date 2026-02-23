@@ -1,4 +1,4 @@
-package com.ignek.entity.count.preferences;
+package com.ignek.entity.count.configuration;
 
 import aQute.bnd.annotation.metatype.Meta;
 import com.ignek.entity.count.constants.EntityCountWebPortletKeys;

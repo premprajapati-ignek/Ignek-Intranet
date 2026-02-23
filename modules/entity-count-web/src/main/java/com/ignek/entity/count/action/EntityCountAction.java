@@ -33,14 +33,4 @@ public class EntityCountAction extends DefaultConfigurationAction {
 
         super.processAction(portletConfig, actionRequest, actionResponse);
     }
-
-    @Override
-    public void include(
-            PortletConfig portletConfig,
-            HttpServletRequest httpServletRequest,
-            HttpServletResponse httpServletResponse)
-            throws Exception {
-
-        super.include(portletConfig, httpServletRequest, httpServletResponse);
-    }
 }
