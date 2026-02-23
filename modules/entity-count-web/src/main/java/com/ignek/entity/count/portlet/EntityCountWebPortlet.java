@@ -1,20 +1,18 @@
 package com.ignek.entity.count.portlet;
 
 import com.ignek.entity.count.constants.EntityCountWebPortletKeys;
-
+import com.liferay.asset.kernel.service.AssetCategoryLocalServiceUtil;
 import com.liferay.document.library.kernel.service.DLFileEntryLocalServiceUtil;
-import com.liferay.journal.model.JournalArticle;
-import com.liferay.journal.service.JournalArticleLocalServiceUtil;
 import com.liferay.portal.kernel.model.Role;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
-
 import javax.portlet.*;
-
 import com.liferay.portal.kernel.service.RoleLocalServiceUtil;
+import com.liferay.portal.kernel.service.UserGroupRoleLocalServiceUtil;
+import com.liferay.portal.kernel.service.UserLocalService;
 import com.liferay.portal.kernel.service.UserLocalServiceUtil;
 import com.liferay.portal.kernel.util.PortalUtil;
 import org.osgi.service.component.annotations.Component;
-
+import org.osgi.service.component.annotations.Reference;
 import java.io.IOException;
 
 @Component(
@@ -36,26 +34,41 @@ public class EntityCountWebPortlet extends MVCPortlet {
 	public void render(RenderRequest renderRequest, RenderResponse renderResponse)
 			throws IOException, PortletException {
 
+
 		try {
+
 			PortletPreferences portletPreferences = renderRequest.getPreferences();
 			String title = portletPreferences.getValue("title","Employees");
-			System.out.println(title);
+			long countOfRecords = 0;
 
 			if (title.equals("Employees")){
+
 				long companyId = PortalUtil.getDefaultCompanyId();
-				Role employeeRole = RoleLocalServiceUtil.getRole(companyId, "Site Employee");
-				int employeeCount = UserLocalServiceUtil.getRoleUsersCount(employeeRole.getRoleId());
-				renderRequest.setAttribute("count", employeeCount);
+				long groupId = PortalUtil.getScopeGroupId(renderRequest);
+
+				Role siteEmployeeRole = RoleLocalServiceUtil.getRole(companyId, "Site Employee");
+				long siteEmployeeCount = UserGroupRoleLocalServiceUtil.getUserGroupRolesCount(siteEmployeeRole.getUserId(),groupId);
+
+				countOfRecords = siteEmployeeCount;
+
 			} else if (title.equals("Technologies")) {
-				long journalArticlesCount = JournalArticleLocalServiceUtil.getJournalArticlesCount();
-				renderRequest.setAttribute("count", journalArticlesCount);
+
+				int categoriesCount = AssetCategoryLocalServiceUtil.getAssetCategoriesCount();
+				countOfRecords = categoriesCount;
+
 			} else if (title.equals("Images")) {
+
 				int imagesCount = DLFileEntryLocalServiceUtil.getDLFileEntriesCount();
-				renderRequest.setAttribute("count", imagesCount);
+				countOfRecords = imagesCount;
+
 			} else if (title.equals("Users")) {
+
 				long usersCount = UserLocalServiceUtil.getUsersCount();
-				renderRequest.setAttribute("count", usersCount);
+				countOfRecords = usersCount;
+
 			}
+			renderRequest.setAttribute("count", countOfRecords);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
