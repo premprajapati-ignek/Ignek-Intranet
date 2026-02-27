@@ -4,7 +4,7 @@
     <div class="records-card-container">
       <div class="card-information">
         <div class="card-img-container">
-          <img class="card-img" src="<%= renderResponse.encodeURL(renderRequest.getContextPath() + "/asset/" + title + ".png") %>" alt="#" />
+          <img class="card-img" src="<%= renderResponse.encodeURL(renderRequest.getContextPath() + "/images/" + title + ".png") %>" alt="#" />
         </div>
         <b class="card-title poppins-medium"><%=title%></b>
       </div>

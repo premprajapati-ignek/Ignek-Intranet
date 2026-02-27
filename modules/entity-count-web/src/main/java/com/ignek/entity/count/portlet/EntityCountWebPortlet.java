@@ -38,6 +38,7 @@ public class EntityCountWebPortlet extends MVCPortlet {
 
         try {
             PortletPreferences portletPreferences = renderRequest.getPreferences();
+
             String title = portletPreferences.getValue(EntityCountWebPortletKeys.TITLE, EntityCountWebPortletKeys.EMPLOYEES);
             long countOfRecords = 0;
             long companyId = PortalUtil.getCompanyId(renderRequest);
