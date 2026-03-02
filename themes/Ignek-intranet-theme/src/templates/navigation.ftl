@@ -15,11 +15,10 @@
 			</#if>
 
 			<li class="${nav_item_css_class}" id="layout_${nav_item.getLayoutId()}" role="presentation">
-				<#--  <a class="page-nav-a" ${nav_item_attr_has_popup} href="${nav_item.getURL()}" ${nav_item.getTarget()} role="menuitem"><span class="page-nav-span poppins-medium d-flex align-items-center"><@liferay_theme["layout-icon"] layout=nav_item_layout /> ${nav_item.getName()}</span></a>  -->
 				<a class="page-nav-a" ${nav_item_attr_has_popup} href="${nav_item.getURL()}" ${nav_item.getTarget()} role="menuitem">
-					<span class="page-nav-span poppins-medium d-flex align-items-center">
+					<span class="p-4 page-nav-span poppins-medium d-flex align-items-center">
 						<@liferay_theme["layout-icon"] layout=nav_item.getLayout() />
-						<span class="ml-2">
+						<span class="ml-3">
 							${nav_item.getName()}
 						</span>
 					</span>

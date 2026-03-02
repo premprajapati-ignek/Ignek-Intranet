@@ -47,7 +47,22 @@
 						<span class="user-name poppins-bold">${user.fullName}</span>
 					</div>
 					<div>
-						<span class="user-role poppins-medium">Employee</span>
+						<#assign
+							userGroupRoleLocalService = serviceLocator.findService("com.liferay.portal.kernel.service.UserGroupRoleLocalService")
+							roleConstants = staticUtil["com.liferay.portal.kernel.model.RoleConstants"]
+
+							userId = user.getUserId()
+							siteGroupId = layout.getGroupId()
+
+							siteRoles = userGroupRoleLocalService.getUserGroupRoles(userId)
+						/>
+						<span class="user-role poppins-medium">
+							<#list siteRoles as userGroupRole>
+								<#if userGroupRole.getRole().getType() == roleConstants.TYPE_SITE>
+									${userGroupRole.getRole().getName()}
+								</#if>
+							</#list>
+						</span>
 					</div>
 					</div>
 					<div>
@@ -82,7 +97,7 @@
 				/>
 				</div>
 				<div>
-					<@liferay.search_bar  />
+					<@liferay.search_bar/>
 				</div>
 			</div>
 			<section id="content">
