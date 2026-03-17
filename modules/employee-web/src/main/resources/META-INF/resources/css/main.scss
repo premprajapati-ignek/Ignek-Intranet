@@ -1,0 +1,82 @@
+.employee-form {
+    padding: 0.5rem;
+
+    .form-heading {
+        font-size: 24px;
+        margin-bottom: 1.5rem !important;
+    }
+    .form-conta {
+        padding: 1.5rem 1rem;
+    }
+    .employee-form-input {
+        height: 60px;
+    }
+    .employee-form-btn {
+        border: none;
+        color: white;
+        background-color: #00979e;
+        padding: 0.6rem 3rem;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+}
+
+.employees-container{
+      .add-employee-btn {
+        border: none;
+        color: white;
+        background-color: #00979e;
+        padding: 0.5rem 1.5rem;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      .add-employee-btn:hover {
+        text-decoration: none;
+        color: white;
+      }
+      .employee-title {
+        font-size: 22px;
+        margin: 0;
+      }
+      table {
+        border-collapse: separate;
+        border-spacing: 0 10px;
+      }
+      th,
+      td {
+        padding: 1rem;
+      }
+      td {
+        font-size: 14px;
+        background-color: white;
+      }
+      th {
+        color: #acacac;
+        font-size: 12px;
+      }
+      tr {
+        border-radius: 8px;
+      }
+      .action-th {
+        text-align: center;
+      }
+      .action-td {
+        text-align: center;
+      }
+      tr td:first-child {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+      tr td:last-child {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      .action-icon-img {
+        width: 15px;
+        height: 15px;
+      }
+      .action-link {
+        margin: 0 10px;
+      }
+}
