@@ -1,9 +1,9 @@
 .employee-form {
     padding: 0.5rem;
-
+    border-radius: 15px;
     .form-heading {
         font-size: 24px;
-        margin-bottom: 1.5rem !important;
+        margin: 1.5rem 0 !important;
     }
     .form-conta {
         padding: 1.5rem 1rem;
@@ -18,6 +18,10 @@
         padding: 0.6rem 3rem;
         border-radius: 5px;
         font-size: 14px;
+    }
+    .employee-form-group {
+        padding: 0 4rem;
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -48,7 +52,7 @@
       }
       td {
         font-size: 14px;
-        background-color: white;
+        background-color: #FFFFFF;
       }
       th {
         color: #acacac;
@@ -79,4 +83,52 @@
       .action-link {
         margin: 0 10px;
       }
+      .action-link:hover {
+        text-decoration: none !important;
+      }
+}
+
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000080;
+
+  .modal-content {
+    background: #fff;
+    padding: 1.5rem;
+    width: 500px;
+    height: 220px;
+    margin: 10% auto;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  .modal-message {
+    margin: 0;
+    font-size: 22px;
+    padding: 1rem;
+  }
+
+  .modal-btn {
+    margin-left: 15px;
+    background-color: #ffffff;
+    width: 120px;
+    height: 30px;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid #000;
+    cursor: pointer;
+    background-color: width 2s ease-in-out 0.5s;
+  }
+
+  .modal-btn:hover {
+    background-color: #00979e;
+    color: #fff;
+    border: none;
+  }
 }
