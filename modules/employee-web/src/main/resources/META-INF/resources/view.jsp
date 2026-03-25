@@ -28,9 +28,7 @@
         <th class="action-th"><liferay-ui:message key="actions"/></th>
       </tr>
       <c:forEach items="${employeeList}" var="employee">
-        <portlet:resourceURL var="downloadEmployeePdfURL">
-            <portlet:param name="mvcPath" value="/view.jsp"/>
-            <portlet:param name="action" value="downloadEmployeePdf"/>
+        <portlet:resourceURL var="downloadEmployeePdfURL" id="/downloadEmployeePdf">
             <portlet:param name="employeeId" value="${employee.employeeId}"/>
         </portlet:resourceURL>
 
