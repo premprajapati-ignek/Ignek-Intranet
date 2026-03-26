@@ -27,7 +27,7 @@
         <th><liferay-ui:message key="city"/></th>
         <th class="action-th"><liferay-ui:message key="actions"/></th>
       </tr>
-      <c:forEach items="${employeeList}" var="employee">
+      <c:forEach items="${employeeList}" var="employee" varStatus="loopStatus">
         <portlet:resourceURL var="downloadEmployeePdfURL" id="/downloadEmployeePdf">
             <portlet:param name="employeeId" value="${employee.employeeId}"/>
         </portlet:resourceURL>
@@ -42,7 +42,7 @@
         </portlet:actionURL>
 
         <tr class="poppins-regular">
-            <td>${employee.employeeId}</td>
+            <td>${loopStatus.count}</td>
             <td>${employee.firstName} ${employee.lastName}</td>
             <td>${employee.designation}</td>
             <td>${employee.phoneNumber}</td>
