@@ -10,6 +10,8 @@ import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.model.UserConstants;
 import com.liferay.portal.kernel.portlet.bridges.mvc.BaseMVCActionCommand;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCActionCommand;
+import com.liferay.portal.kernel.search.Indexer;
+import com.liferay.portal.kernel.search.IndexerRegistryUtil;
 import com.liferay.portal.kernel.service.ServiceContext;
 import com.liferay.portal.kernel.service.ServiceContextFactory;
 import com.liferay.portal.kernel.service.UserLocalService;
@@ -126,6 +128,9 @@ public class AddUpdateEmployee extends BaseMVCActionCommand {
                 employeeLocalService.updateEmployee(employee);
                 log.info("Employee updated successfully");
             }
+
+            Indexer<Employee> indexer = IndexerRegistryUtil.nullSafeGetIndexer(Employee.class);
+            indexer.reindex(employee);
         } catch (Exception e) {
             log.error("Failed to create/update employee", e);
         }

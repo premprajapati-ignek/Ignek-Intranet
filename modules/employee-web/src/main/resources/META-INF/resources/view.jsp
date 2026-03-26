@@ -35,15 +35,6 @@
         <portlet:renderURL var="updateEmployeeRenderURL">
             <portlet:param name="mvcPath" value="/add-update-employee.jsp"/>
             <portlet:param name="employeeId" value="${employee.employeeId}"/>
-            <portlet:param name="firstName" value="${employee.firstName}"/>
-            <portlet:param name="lastName" value="${employee.lastName}"/>
-            <portlet:param name="designation" value="${employee.designation}"/>
-            <portlet:param name="phoneNumber" value="${employee.phoneNumber}"/>
-            <portlet:param name="addressLine1" value="${employee.addressLine1}"/>
-            <portlet:param name="addressLine2" value="${employee.addressLine2}"/>
-            <portlet:param name="emailAddress" value="${employee.emailAddress}"/>
-            <portlet:param name="city" value="${employee.city}"/>
-            <portlet:param name="zipCode" value="${employee.zipCode}"/>
         </portlet:renderURL>
 
         <portlet:actionURL name="deleteEmployee" var="deleteEmployeeActionURL">

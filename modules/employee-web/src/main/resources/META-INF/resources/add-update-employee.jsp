@@ -1,19 +1,18 @@
 <%@ include file="/init.jsp" %>
 <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
+<%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
+<%@ page import="com.ignek.employee.model.Employee" %>
+<%@ page import="com.ignek.employee.service.EmployeeLocalServiceUtil" %>
 
 <portlet:actionURL name="addUpdateEmployee" var="addEmployeeActionURL"/>
 
 <%
-    String employeeId = renderRequest.getParameter("employeeId");
-    String firstName = renderRequest.getParameter("firstName");
-    String lastName = renderRequest.getParameter("lastName");
-    String designation = renderRequest.getParameter("designation");
-    String emailAddress = renderRequest.getParameter("emailAddress");
-    String phoneNumber = renderRequest.getParameter("phoneNumber");
-    String addressLine1 = renderRequest.getParameter("addressLine1");
-    String addressLine2 = renderRequest.getParameter("addressLine2");
-    String city = renderRequest.getParameter("city");
-    String zipCode = renderRequest.getParameter("zipCode");
+    long employeeId = ParamUtil.getLong(request, "employeeId");
+    Employee employee = null;
+    if (employeeId > 0) {
+        employee = EmployeeLocalServiceUtil.getEmployee(employeeId);
+    }
+    pageContext.setAttribute("employee", employee);
 %>
 
 <div class="employee-form bg-white">
@@ -81,7 +80,7 @@
           </div>
           <div class="col-6">
             <div class="form-group">
-                <aui:input name="zipCode" label="zip-code" labelCssClass="poppins-regular" cssClass="form-control employee-form-input poppins-regular" placeholder="zip-code-placeholder" value="${employee.zipcode}">
+                <aui:input name="zipCode" label="zip-code" labelCssClass="poppins-regular" cssClass="form-control employee-form-input poppins-regular" placeholder="zip-code-placeholder" value="${employee.zipCode}">
                     <aui:validator name="digits"/>
                     <aui:validator name="maxLength">6</aui:validator>
                 </aui:input>
