@@ -6,26 +6,30 @@
 <portlet:renderURL var="addEmployeeRenderURL">
     <portlet:param name="mvcPath" value="/add-update-employee.jsp"/>
 </portlet:renderURL>
+<c:url var="editEmployeeIcon" value="/images/edit.png" />
+<c:url var="deleteEmployeeIcon" value="/images/delete.png" />
+<c:url var="pdfDownloadIcon" value="/images/pdfDownload.png" />
 
 <div class="employees-container">
   <div class="container mt-4">
     <div class="d-flex justify-content-between">
       <p class="employee-title poppins-bold"><liferay-ui:message key="title-employees"/></p>
-      <a
-        class="add-employee-btn poppins-medium d-flex align-items-center justify-content-center"
-        href="<%= addEmployeeRenderURL %>"
-        ><liferay-ui:message key="add-new-employee-btn"/></a>
+      <c:if test="${not isSiteEmployee}">
+        <a class="add-employee-btn poppins-medium d-flex align-items-center justify-content-center"
+            href="${addEmployeeRenderURL}"
+            ><liferay-ui:message key="add-new-employee-btn"/></a>
+      </c:if>
     </div>
     <hr />
     <table class="w-100">
       <tr class="poppins-semibold">
-        <th><liferay-ui:message key="sr-no"/></th>
+        <th class="text-th-center"><liferay-ui:message key="sr-no"/></th>
         <th><liferay-ui:message key="name"/></th>
         <th><liferay-ui:message key="designation"/></th>
         <th><liferay-ui:message key="phone"/></th>
         <th><liferay-ui:message key="email"/></th>
         <th><liferay-ui:message key="city"/></th>
-        <th class="action-th"><liferay-ui:message key="actions"/></th>
+        <th class="text-th-center"><liferay-ui:message key="actions"/></th>
       </tr>
       <c:forEach items="${employeeList}" var="employee">
         <portlet:resourceURL var="downloadEmployeePdfURL" id="/downloadEmployeePdf">
@@ -51,26 +55,31 @@
         </portlet:actionURL>
 
         <tr class="poppins-regular">
+<<<<<<< Updated upstream
             <td>${employee.employeeId}</td>
+=======
+            <td  class="text-td-center">${loopStatus.count}</td>
+>>>>>>> Stashed changes
             <td>${employee.firstName} ${employee.lastName}</td>
             <td>${employee.designation}</td>
             <td>${employee.phoneNumber}</td>
             <td>${employee.emailAddress}</td>
             <td>${employee.city}</td>
-            <td class="action-td">
-              <a href="<%=updateEmployeeRenderURL%>" class="action-link"
-                ><img class="action-icon-img" src="<%= renderResponse.encodeURL(renderRequest.getContextPath() + "/images/edit.png") %>" alt="#"
-              /></a>
+            <td class="text-td-center">
+              <c:if test="${not isSiteEmployee}">
+                <a href="${updateEmployeeRenderURL}" class="action-link"
+                    ><img class="action-icon-img" src="${editEmployeeIcon}" alt="#"
+                  /></a>
 
-              <a href="javascript:void(0);" class="action-link"
-                 onclick="openDeletePopup('<%= deleteEmployeeActionURL %>')">
-                 <img class="action-icon-img"  src="<%= renderResponse.encodeURL(renderRequest.getContextPath() + "/images/delete.png") %>" alt="#"/>
-              </a>
-
-              <a href="<%= downloadEmployeePdfURL %>" class="action-link"
+                  <a href="javascript:void(0);" class="action-link"
+                     onclick="openDeletePopup('${deleteEmployeeActionURL}')">
+                     <img class="action-icon-img"  src="${deleteEmployeeIcon}" alt="#"/>
+                  </a>
+              </c:if>
+              <a href="${downloadEmployeePdfURL}" target="_blank" class="action-link"
                 ><img
                   class="action-icon-img"
-                   src="<%= renderResponse.encodeURL(renderRequest.getContextPath() + "/images/pdfDownload.png") %>" alt="#"
+                  src="${pdfDownloadIcon}" alt="#"
               /></a>
             </td>
         </tr>

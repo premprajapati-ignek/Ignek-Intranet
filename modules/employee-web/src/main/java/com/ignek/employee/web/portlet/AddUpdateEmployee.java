@@ -6,13 +6,21 @@ import com.ignek.employee.web.constants.EmployeeWebPortletKeys;
 import com.liferay.counter.kernel.service.CounterLocalService;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.model.Role;
 import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.model.UserConstants;
+import com.liferay.portal.kernel.model.role.RoleConstants;
 import com.liferay.portal.kernel.portlet.bridges.mvc.BaseMVCActionCommand;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCActionCommand;
+<<<<<<< Updated upstream
 import com.liferay.portal.kernel.service.ServiceContext;
 import com.liferay.portal.kernel.service.ServiceContextFactory;
 import com.liferay.portal.kernel.service.UserLocalService;
+=======
+import com.liferay.portal.kernel.search.Indexer;
+import com.liferay.portal.kernel.search.IndexerRegistryUtil;
+import com.liferay.portal.kernel.service.*;
+>>>>>>> Stashed changes
 import com.liferay.portal.kernel.util.ParamUtil;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
@@ -39,6 +47,10 @@ public class AddUpdateEmployee extends BaseMVCActionCommand {
     CounterLocalService counterLocalService;
     @Reference
     UserLocalService userLocalService;
+    @Reference
+    RoleLocalService roleLocalService;
+    @Reference
+    UserGroupRoleLocalService userGroupRoleLocalService;
 
     @Override
     protected void doProcessAction(ActionRequest actionRequest, ActionResponse actionResponse) throws Exception {
@@ -98,6 +110,9 @@ public class AddUpdateEmployee extends BaseMVCActionCommand {
                         autoScreenName, screenName, emailAddress, locale, firstName, middleName, lastName, -1, -1, male,
                         birthMonth, birthDay, birthYear, designation, type, groupIds, null, null, null, sendMail,
                         serviceContext);
+
+                Role siteEmployeeRole = roleLocalService.getRole(companyId, EmployeeWebPortletKeys.SITE_EMPLOYEE);
+                userGroupRoleLocalService.addUserGroupRoles(user.getUserId(), groupId, new long[]{siteEmployeeRole.getRoleId()});
 
                 employeeId = counterLocalService.increment(Employee.class.getName());
                 employee = employeeLocalService.createEmployee(employeeId);

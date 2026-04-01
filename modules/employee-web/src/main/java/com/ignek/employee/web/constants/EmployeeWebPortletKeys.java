@@ -24,4 +24,6 @@ public class EmployeeWebPortletKeys {
 	public static final String PASSWORD2 = "test";
 	public static final String MIDDLE_NAME = "";
 	public static final String DOWNLOAD_EMPLOYEE_PDF = "/downloadEmployeePdf";
+	public static final String SITE_EMPLOYEE = "Site Employee";
+	public static final String IS_SITE_EMPLOYEE = "isSiteEmployee";
 }

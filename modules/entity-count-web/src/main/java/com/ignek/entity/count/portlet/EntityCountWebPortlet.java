@@ -1,8 +1,12 @@
 package com.ignek.entity.count.portlet;
 
 import com.ignek.entity.count.constants.EntityCountWebPortletKeys;
+import com.liferay.asset.kernel.model.AssetVocabulary;
 import com.liferay.asset.kernel.service.AssetCategoryLocalService;
+import com.liferay.asset.kernel.service.AssetVocabularyLocalService;
+import com.liferay.document.library.kernel.model.DLFolder;
 import com.liferay.document.library.kernel.service.DLFileEntryLocalService;
+import com.liferay.document.library.kernel.service.DLFolderLocalService;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.model.Role;
@@ -22,6 +26,7 @@ import java.io.IOException;
                 "javax.portlet.display-name=EntityCountWeb",
                 "javax.portlet.init-param.template-path=/",
                 "javax.portlet.init-param.view-template=/view.jsp",
+                "javax.portlet.init-param.config-template=/configuration.jsp",
                 "javax.portlet.name=" + EntityCountWebPortletKeys.ENTITYCOUNTWEB,
                 "javax.portlet.resource-bundle=content.Language",
                 "javax.portlet.security-role-ref=power-user,user"
@@ -48,9 +53,11 @@ public class EntityCountWebPortlet extends MVCPortlet {
                 Role siteEmployeeRole = roleLocalService.getRole(companyId, EntityCountWebPortletKeys.SITE_EMPLOYEE);
                 countOfRecords = userGroupRoleLocalService.getUserGroupRolesByGroupAndRole(groupId, siteEmployeeRole.getRoleId()).size();
 			} else if (title.equalsIgnoreCase(EntityCountWebPortletKeys.TECHNOLOGIES)) {
-                countOfRecords = assetCategoryLocalService.getAssetCategoriesCount();
+                AssetVocabulary vocabulary = assetVocabularyLocalService.fetchGroupVocabulary(groupId, "Coding Languages");
+                countOfRecords = assetCategoryLocalService.getVocabularyCategoriesCount(vocabulary.getVocabularyId());
             } else if (title.equalsIgnoreCase(EntityCountWebPortletKeys.IMAGES)) {
-                countOfRecords = dlFileEntryLocalService.getDLFileEntriesCount();
+                DLFolder folder = dlFolderLocalService.getFolder(groupId, 0, "Media");
+                countOfRecords = dlFileEntryLocalService.getFileEntriesCount(groupId, folder.getFolderId());
             } else if (title.equalsIgnoreCase(EntityCountWebPortletKeys.USERS)) {
                 countOfRecords = userLocalService.getUsersCount();
             }
@@ -70,4 +77,8 @@ public class EntityCountWebPortlet extends MVCPortlet {
     private UserGroupRoleLocalService userGroupRoleLocalService;
     @Reference
     private RoleLocalService roleLocalService;
+    @Reference
+    private DLFolderLocalService dlFolderLocalService;
+    @Reference
+    private AssetVocabularyLocalService assetVocabularyLocalService;
 }

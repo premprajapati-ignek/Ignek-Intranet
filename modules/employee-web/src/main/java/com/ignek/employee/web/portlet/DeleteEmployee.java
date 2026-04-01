@@ -7,6 +7,8 @@ import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.portlet.bridges.mvc.BaseMVCActionCommand;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCActionCommand;
+import com.liferay.portal.kernel.search.Indexer;
+import com.liferay.portal.kernel.search.IndexerRegistryUtil;
 import com.liferay.portal.kernel.service.UserLocalService;
 import com.liferay.portal.kernel.util.ParamUtil;
 import org.osgi.service.component.annotations.Component;
@@ -37,6 +39,9 @@ public class DeleteEmployee extends BaseMVCActionCommand {
             Employee employee = employeeLocalService.getEmployee(employeeId);
             userLocalService.deleteUser(employee.getUserId());
             employeeLocalService.deleteEmployee(employeeId);
+
+            Indexer<Employee> indexer = IndexerRegistryUtil.nullSafeGetIndexer(Employee.class);
+            indexer.reindex(employee);
             log.info("Employee deleted successfully");
         } catch (Exception e){
             log.error("Failed to delete employee", e);
