@@ -1,0 +1,5 @@
+Bundle-Name: employee-rest-test
+Bundle-SymbolicName: com.ignek.employee.rest.test
+Bundle-Version: 1.0.0
+-includeresource: com.ignek.employee.rest.client.jar=../employee-rest-client/build/libs/com.ignek.employee.rest.client-1.0.0.jar;lib:=true
+-provider-policy: ${replacestring;${range;[==,==]};.*,(.*)];$1}
