@@ -33,6 +33,7 @@ import java.io.IOException;
         },
         service = Portlet.class
 )
+
 public class EntityCountWebPortlet extends MVCPortlet {
 
     private static final Log _log = LogFactoryUtil.getLog(EntityCountWebPortlet.class);

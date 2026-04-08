@@ -11,9 +11,6 @@ import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.model.UserGroupRole;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import javax.portlet.*;
-<<<<<<< Updated upstream
-import com.liferay.portal.kernel.service.UserLocalService;
-=======
 import com.liferay.portal.kernel.search.*;
 import com.liferay.portal.kernel.service.RoleLocalService;
 import com.liferay.portal.kernel.service.UserGroupRoleLocalService;
@@ -21,39 +18,30 @@ import com.liferay.portal.kernel.theme.ThemeDisplay;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.WebKeys;
->>>>>>> Stashed changes
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Component(
-	property = {
-		"com.liferay.portlet.display-category=category.sample",
-		"com.liferay.portlet.header-portlet-css=/css/main.css",
-		"com.liferay.portlet.instanceable=true",
-		"javax.portlet.display-name=EmployeeWeb",
-		"javax.portlet.init-param.template-path=/",
-		"javax.portlet.init-param.view-template=/view.jsp",
-		"javax.portlet.name=" + EmployeeWebPortletKeys.EMPLOYEEWEB,
-		"javax.portlet.resource-bundle=content.Language",
-		"javax.portlet.security-role-ref=power-user,user"
-	},
-	service = Portlet.class
+		property = {
+				"com.liferay.portlet.display-category=category.sample",
+				"com.liferay.portlet.header-portlet-css=/css/main.css",
+				"com.liferay.portlet.instanceable=true",
+				"javax.portlet.display-name=EmployeeWeb",
+				"javax.portlet.init-param.template-path=/",
+				"javax.portlet.init-param.view-template=/view.jsp",
+				"javax.portlet.name=" + EmployeeWebPortletKeys.EMPLOYEEWEB,
+				"javax.portlet.resource-bundle=content.Language",
+				"javax.portlet.security-role-ref=power-user,user"
+		},
+		service = Portlet.class
 )
 
 public class EmployeeWebPortlet extends MVCPortlet {
 	private Log log = LogFactoryUtil.getLog(this.getClass().getName());
 
-<<<<<<< Updated upstream
-	@Override
-	public void render(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
-		try {
-			List<Employee> employeeList = employeeLocalService.getEmployees(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
-			renderRequest.setAttribute(EmployeeWebPortletKeys.EMPLOYEE_LIST, employeeList);
-			super.render(renderRequest, renderResponse);
-			log.info("Employees retrieved successfully...");
-=======
 	@Reference
 	protected IndexerRegistry indexerRegistry;
 	@Reference
@@ -121,12 +109,10 @@ public class EmployeeWebPortlet extends MVCPortlet {
 
 			log.info("Employees retrieved from Elasticsearch...");
 
->>>>>>> Stashed changes
 		} catch (Exception e) {
-			log.error("Error to found employees.", e);
+			log.error("Error fetching employees from Elasticsearch", e);
 		}
-	}
 
-	@Reference
-	EmployeeLocalService employeeLocalService;
+		super.render(renderRequest, renderResponse);
+	}
 }

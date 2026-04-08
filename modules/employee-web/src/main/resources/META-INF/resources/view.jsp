@@ -31,7 +31,7 @@
         <th><liferay-ui:message key="city"/></th>
         <th class="text-th-center"><liferay-ui:message key="actions"/></th>
       </tr>
-      <c:forEach items="${employeeList}" var="employee">
+      <c:forEach items="${employeeList}" var="employee" varStatus="loopStatus">
         <portlet:resourceURL var="downloadEmployeePdfURL" id="/downloadEmployeePdf">
             <portlet:param name="employeeId" value="${employee.employeeId}"/>
         </portlet:resourceURL>
@@ -39,15 +39,6 @@
         <portlet:renderURL var="updateEmployeeRenderURL">
             <portlet:param name="mvcPath" value="/add-update-employee.jsp"/>
             <portlet:param name="employeeId" value="${employee.employeeId}"/>
-            <portlet:param name="firstName" value="${employee.firstName}"/>
-            <portlet:param name="lastName" value="${employee.lastName}"/>
-            <portlet:param name="designation" value="${employee.designation}"/>
-            <portlet:param name="phoneNumber" value="${employee.phoneNumber}"/>
-            <portlet:param name="addressLine1" value="${employee.addressLine1}"/>
-            <portlet:param name="addressLine2" value="${employee.addressLine2}"/>
-            <portlet:param name="emailAddress" value="${employee.emailAddress}"/>
-            <portlet:param name="city" value="${employee.city}"/>
-            <portlet:param name="zipCode" value="${employee.zipCode}"/>
         </portlet:renderURL>
 
         <portlet:actionURL name="deleteEmployee" var="deleteEmployeeActionURL">
@@ -55,11 +46,7 @@
         </portlet:actionURL>
 
         <tr class="poppins-regular">
-<<<<<<< Updated upstream
-            <td>${employee.employeeId}</td>
-=======
             <td  class="text-td-center">${loopStatus.count}</td>
->>>>>>> Stashed changes
             <td>${employee.firstName} ${employee.lastName}</td>
             <td>${employee.designation}</td>
             <td>${employee.phoneNumber}</td>

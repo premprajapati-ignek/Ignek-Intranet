@@ -62,7 +62,7 @@ public class EmployeePDF implements MVCResourceCommand{
             PdfWriter.getInstance(document, out);
             document.open();
 
-            Font font = new Font(Font.HELVETICA, 12);
+            Font font = new Font(Font.TIMES_ROMAN, 12);
 
             for (String line : content.split("\n")) {
                 document.add(new Paragraph(line, font));
