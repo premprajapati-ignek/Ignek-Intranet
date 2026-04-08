@@ -45,7 +45,7 @@ public class EmployeePDF implements MVCResourceCommand{
                 return true;
             }
 
-            String content = "Employee Details : " + "\n" +
+            String content = "Employee Details : " + "\n" + " \n" +
                     "Employee Id : " + employee.getEmployeeId() + "\n" +
                     "User Id : " + employee.getUserId() + "\n" +
                     "Name : " + employee.getFirstName() + " " + employee.getLastName() + "\n" +

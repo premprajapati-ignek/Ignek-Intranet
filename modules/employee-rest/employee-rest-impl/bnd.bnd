@@ -1,0 +1,3 @@
+Bundle-Name: employee-rest-impl
+Bundle-SymbolicName: com.ignek.employee.rest.impl
+Bundle-Version: 1.0.0
