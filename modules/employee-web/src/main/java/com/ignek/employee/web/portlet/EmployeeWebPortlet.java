@@ -72,8 +72,7 @@ public class EmployeeWebPortlet extends MVCPortlet {
 				}
 			}
 
-			Indexer<Employee> indexer =
-					indexerRegistry.getIndexer(Employee.class);
+			Indexer<Employee> indexer = indexerRegistry.getIndexer(Employee.class);
 
 			SearchContext searchContext = new SearchContext();
 			searchContext.setCompanyId(themeDisplay.getCompanyId());
@@ -112,7 +111,6 @@ public class EmployeeWebPortlet extends MVCPortlet {
 		} catch (Exception e) {
 			log.error("Error fetching employees from Elasticsearch", e);
 		}
-
 		super.render(renderRequest, renderResponse);
 	}
 }

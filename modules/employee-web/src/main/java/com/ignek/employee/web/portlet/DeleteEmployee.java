@@ -41,7 +41,8 @@ public class DeleteEmployee extends BaseMVCActionCommand {
             employeeLocalService.deleteEmployee(employeeId);
 
             Indexer<Employee> indexer = IndexerRegistryUtil.nullSafeGetIndexer(Employee.class);
-            indexer.reindex(employee);
+            indexer.delete(employee);
+            log.info("Employee removed from the elasticsearch document");
             log.info("Employee deleted successfully");
         } catch (Exception e){
             log.error("Failed to delete employee", e);

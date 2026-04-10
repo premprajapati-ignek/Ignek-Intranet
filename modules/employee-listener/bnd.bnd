@@ -1,0 +1,3 @@
+Bundle-Name: employee-listener
+Bundle-SymbolicName: com.ignek.employee.listener
+Bundle-Version: 1.0.0
