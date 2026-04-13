@@ -25,3 +25,10 @@
 /plugins-sdk/dist
 /plugins-sdk/lib
 test-results
+.claude
+.cursor
+.gemini
+.github
+.metadata
+.windsurf
+.workspace-rules
