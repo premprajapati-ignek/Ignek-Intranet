@@ -10,4 +10,6 @@ public class EmployeeModelListenerConstants {
     public static final String INSERT = "INSERT";
     public static final String UPDATE = "UPDATE";
     public static final String DELETE = "DELETE";
+    public static final String ROLE_ASSIGNED = "ROLEASSIGNED";
+    public static final String ROLE_REMOVED = "ROLEREMOVED";
 }
