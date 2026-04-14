@@ -2,10 +2,14 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.ignek.employee.model.Employee" %>
 
-<% List<Employee> employeeList = (List<Employee>) request.getAttribute("employeeList"); %>
+<%
+    List<Employee> employeeList = (List<Employee>) request.getAttribute("employeeList");
+%>
+
 <portlet:renderURL var="addEmployeeRenderURL">
     <portlet:param name="mvcPath" value="/add-update-employee.jsp"/>
 </portlet:renderURL>
+
 <c:url var="editEmployeeIcon" value="/images/edit.png" />
 <c:url var="deleteEmployeeIcon" value="/images/delete.png" />
 <c:url var="pdfDownloadIcon" value="/images/pdfDownload.png" />
@@ -20,7 +24,9 @@
             ><liferay-ui:message key="add-new-employee-btn"/></a>
       </c:if>
     </div>
+
     <hr />
+
     <table class="w-100">
       <tr class="poppins-semibold">
         <th class="text-th-center"><liferay-ui:message key="sr-no"/></th>
@@ -31,14 +37,15 @@
         <th><liferay-ui:message key="city"/></th>
         <th class="text-th-center"><liferay-ui:message key="actions"/></th>
       </tr>
+
       <c:forEach items="${employeeList}" var="employee" varStatus="loopStatus">
         <portlet:resourceURL var="downloadEmployeePdfURL" id="/downloadEmployeePdf">
             <portlet:param name="employeeId" value="${employee.employeeId}"/>
         </portlet:resourceURL>
 
         <portlet:renderURL var="updateEmployeeRenderURL">
-            <portlet:param name="mvcPath" value="/add-update-employee.jsp"/>
-            <portlet:param name="employeeId" value="${employee.employeeId}"/>
+            <portlet:param name="mvcRenderCommandName" value="updateEmployee" />
+            <portlet:param name="employeeId" value="${employee.employeeId}" />
         </portlet:renderURL>
 
         <portlet:actionURL name="deleteEmployee" var="deleteEmployeeActionURL">
@@ -46,7 +53,7 @@
         </portlet:actionURL>
 
         <tr class="poppins-regular">
-            <td  class="text-td-center">${loopStatus.count}</td>
+            <td class="text-td-center">${loopStatus.count}</td>
             <td>${employee.firstName} ${employee.lastName}</td>
             <td>${employee.designation}</td>
             <td>${employee.phoneNumber}</td>
@@ -71,6 +78,7 @@
             </td>
         </tr>
       </c:forEach>
+
     </table>
   </div>
 </div>
@@ -90,18 +98,4 @@
     </div>
   </div>
 </div>
-
-<script>
-function openDeletePopup(url) {
-    deleteUrl = url;
-    document.getElementById("deleteModal").style.display = "block";
-}
-
-function closePopup() {
-    document.getElementById("deleteModal").style.display = "none";
-}
-
-function confirmDelete() {
-    window.location.href = deleteUrl;
-}
-</script>
+<script src="${pageContext.request.contextPath}/js/deletePopup.js" type="text/javascript"></script>

@@ -28,11 +28,8 @@ import java.io.ByteArrayOutputStream;
         service = MVCResourceCommand.class
 )
 
-public class EmployeePDF implements MVCResourceCommand{
+public class EmployeePdfExporter implements MVCResourceCommand{
     private Log log = LogFactoryUtil.getLog(this.getClass().getName());
-
-    @Reference
-    EmployeeLocalService employeeLocalService;
 
     @Override
     public boolean serveResource(ResourceRequest resourceRequest, ResourceResponse resourceResponse) throws PortletException {
@@ -79,9 +76,12 @@ public class EmployeePDF implements MVCResourceCommand{
             );
             log.info("PDF Generated");
             return false;
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             log.error("Error generating PDF", e);
             return true;
         }
     }
+    @Reference
+    EmployeeLocalService employeeLocalService;
 }

@@ -35,16 +35,12 @@ import java.io.IOException;
 )
 
 public class EntityCountWebPortlet extends MVCPortlet {
-
     private static final Log _log = LogFactoryUtil.getLog(EntityCountWebPortlet.class);
 
     @Override
-    public void render(RenderRequest renderRequest, RenderResponse renderResponse)
-            throws IOException, PortletException {
-
+    public void render(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
         try {
             PortletPreferences portletPreferences = renderRequest.getPreferences();
-
             String title = portletPreferences.getValue(EntityCountWebPortletKeys.TITLE, EntityCountWebPortletKeys.EMPLOYEES);
             long countOfRecords = 0;
             long companyId = PortalUtil.getCompanyId(renderRequest);
@@ -53,18 +49,26 @@ public class EntityCountWebPortlet extends MVCPortlet {
             if (title.equalsIgnoreCase(EntityCountWebPortletKeys.EMPLOYEES)) {
                 Role siteEmployeeRole = roleLocalService.getRole(companyId, EntityCountWebPortletKeys.SITE_EMPLOYEE);
                 countOfRecords = userGroupRoleLocalService.getUserGroupRolesByGroupAndRole(groupId, siteEmployeeRole.getRoleId()).size();
-			} else if (title.equalsIgnoreCase(EntityCountWebPortletKeys.TECHNOLOGIES)) {
+                _log.info("Total counts of Site-Employees Role assigned User : " + countOfRecords);
+			}
+            else if (title.equalsIgnoreCase(EntityCountWebPortletKeys.TECHNOLOGIES)) {
                 AssetVocabulary vocabulary = assetVocabularyLocalService.fetchGroupVocabulary(groupId, "Coding Languages");
                 countOfRecords = assetCategoryLocalService.getVocabularyCategoriesCount(vocabulary.getVocabularyId());
-            } else if (title.equalsIgnoreCase(EntityCountWebPortletKeys.IMAGES)) {
+                _log.info("Total counts of Technologies in the 'Coding Languages' Vocabulary : " + countOfRecords);
+            }
+            else if (title.equalsIgnoreCase(EntityCountWebPortletKeys.IMAGES)) {
                 DLFolder folder = dlFolderLocalService.getFolder(groupId, 0, "Media");
                 countOfRecords = dlFileEntryLocalService.getFileEntriesCount(groupId, folder.getFolderId());
-            } else if (title.equalsIgnoreCase(EntityCountWebPortletKeys.USERS)) {
+                _log.info("Total counts of Images under the 'Media' folder : " + countOfRecords);
+            }
+            else if (title.equalsIgnoreCase(EntityCountWebPortletKeys.USERS)) {
                 countOfRecords = userLocalService.getUsersCount();
+                _log.info("Total counts of Users : " + countOfRecords);
             }
             renderRequest.setAttribute(EntityCountWebPortletKeys.COUNT, countOfRecords);
-        } catch (Exception e) {
-            _log.error("Error : " + e);
+        }
+        catch (Exception e) {
+            _log.error("Error rendering entity-count-web portlet data : " + e);
         }
         super.render(renderRequest, renderResponse);
     }

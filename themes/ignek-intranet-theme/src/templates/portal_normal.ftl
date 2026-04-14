@@ -79,7 +79,7 @@
 					class="logout-container-a d-flex align-items-center justify-content-center"
 					href="${theme_display.getURLSignOut()}"
 					>
-					<span class="poppins-medium mr-4">Logout</span>
+					<span class="poppins-medium mr-4">${languageUtil.get(locale, 'logout')}</span>
 					<img src="${images_folder}/sign-out.png" alt="logout" />
 					</a>
 				</div>

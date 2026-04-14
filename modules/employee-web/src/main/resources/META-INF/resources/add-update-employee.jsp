@@ -6,20 +6,11 @@
 
 <portlet:actionURL name="addUpdateEmployee" var="addEmployeeActionURL"/>
 
-<%
-    long employeeId = ParamUtil.getLong(request, "employeeId");
-    Employee employee = null;
-    if (employeeId > 0) {
-        employee = EmployeeLocalServiceUtil.getEmployee(employeeId);
-    }
-    pageContext.setAttribute("employee", employee);
-%>
-
 <div class="employee-form bg-white">
   <div class="m-2">
     <div class="container">
-      <aui:form action="<%=addEmployeeActionURL %>" class="form-conta" name="employeeForm" method="POST">
-        <aui:input name="employeeId" type="hidden" value="<%= GetterUtil.getLong(renderRequest.getParameter("employeeId")) %>" />
+      <aui:form action="${addEmployeeActionURL}" class="form-conta" name="employeeForm" method="POST">
+        <aui:input name="employeeId" type="hidden" value="${employee.employeeId}" />
         <div class="row employee-form-group">
           <div class="col-12">
             <p class="form-heading poppins-bold mb-3"><liferay-ui:message key="title-employee-form"/></p>

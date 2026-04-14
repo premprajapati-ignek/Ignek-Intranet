@@ -34,17 +34,6 @@ import java.util.Locale;
 public class AddUpdateEmployee extends BaseMVCActionCommand {
     private Log log = LogFactoryUtil.getLog(this.getClass().getName());
 
-    @Reference
-    EmployeeLocalService employeeLocalService;
-    @Reference
-    CounterLocalService counterLocalService;
-    @Reference
-    UserLocalService userLocalService;
-    @Reference
-    RoleLocalService roleLocalService;
-    @Reference
-    UserGroupRoleLocalService userGroupRoleLocalService;
-
     @Override
     protected void doProcessAction(ActionRequest actionRequest, ActionResponse actionResponse) throws Exception {
         try{
@@ -64,7 +53,6 @@ public class AddUpdateEmployee extends BaseMVCActionCommand {
             if (employeeId > 0){
                 try{
                     employee = employeeLocalService.getEmployee(employeeId);
-
                     User user = userLocalService.getUser(employee.getUserId());
                     user.setFirstName(firstName);
                     user.setLastName(lastName);
@@ -72,10 +60,12 @@ public class AddUpdateEmployee extends BaseMVCActionCommand {
                     user.setJobTitle(designation);
                     user.setScreenName(firstName+lastName);
                     userLocalService.updateUser(user);
-                } catch (Exception e){
+                }
+                catch (Exception e){
                     log.error("Employee not found", e);
                 }
-            } else {
+            }
+            else {
                 ServiceContext serviceContext = ServiceContextFactory.getInstance(Employee.class.getName(), actionRequest);
                 long creatorUserId = serviceContext.getUserId();
                 long companyId = serviceContext.getCompanyId();
@@ -95,7 +85,6 @@ public class AddUpdateEmployee extends BaseMVCActionCommand {
                 int birthDay = birthDate.getDayOfMonth();
                 int type = UserConstants.TYPE_REGULAR;
                 Locale locale= Locale.getDefault();
-
                 long groupIds[] = new long[10];
                 groupIds[0] = groupId;
 
@@ -130,7 +119,8 @@ public class AddUpdateEmployee extends BaseMVCActionCommand {
             if (employeeId > 0 && employee.isNew()){
                 employeeLocalService.addEmployee(employee);
                 log.info("Employee created successfully");
-            } else {
+            }
+            else {
                 employeeLocalService.updateEmployee(employee);
                 log.info("Employee updated successfully");
             }
@@ -141,4 +131,14 @@ public class AddUpdateEmployee extends BaseMVCActionCommand {
             log.error("Failed to create/update employee", e);
         }
     }
+    @Reference
+    EmployeeLocalService employeeLocalService;
+    @Reference
+    CounterLocalService counterLocalService;
+    @Reference
+    UserLocalService userLocalService;
+    @Reference
+    RoleLocalService roleLocalService;
+    @Reference
+    UserGroupRoleLocalService userGroupRoleLocalService;
 }

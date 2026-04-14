@@ -42,22 +42,13 @@ import java.util.List;
 public class EmployeeWebPortlet extends MVCPortlet {
 	private Log log = LogFactoryUtil.getLog(this.getClass().getName());
 
-	@Reference
-	protected IndexerRegistry indexerRegistry;
-	@Reference
-	protected EmployeeLocalService employeeLocalService;
-	@Reference
-	protected UserGroupRoleLocalService userGroupRoleLocalService;
-	@Reference
-	protected RoleLocalService roleLocalService;
-
 	@Override
-	public void render(RenderRequest renderRequest, RenderResponse renderResponse)
-			throws IOException, PortletException {
-		ThemeDisplay themeDisplay =
-				(ThemeDisplay) renderRequest.getAttribute(WebKeys.THEME_DISPLAY);
+	public void render(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
+
+		ThemeDisplay themeDisplay = (ThemeDisplay) renderRequest.getAttribute(WebKeys.THEME_DISPLAY);
 		User currentUser = themeDisplay.getUser();
 		boolean isSiteEmployee = false;
+
 		try {
 			long userId = currentUser.getUserId();
 			long groupId = themeDisplay.getScopeGroupId();
@@ -83,13 +74,12 @@ public class EmployeeWebPortlet extends MVCPortlet {
 			searchContext.setKeywords(keywords);
 
 			Hits hits = indexer.search(searchContext);
-
 			List<Employee> employeeList = new ArrayList<>();
 
 			for (Document doc : hits.getDocs()) {
 				long employeeId = GetterUtil.getLong(doc.get(Field.ENTRY_CLASS_PK));
 
-				Employee employee = employeeLocalService.getEmployee(employeeId);
+				Employee employee = employeeLocalService.createEmployee(employeeId);
 				employee.setFirstName(doc.get(EmployeeWebPortletKeys.FIRST_NAME));
 				employee.setLastName(doc.get(EmployeeWebPortletKeys.LAST_NAME));
 				employee.setEmailAddress(doc.get(EmployeeWebPortletKeys.EMAIL_ADDRESS));
@@ -107,10 +97,18 @@ public class EmployeeWebPortlet extends MVCPortlet {
 			renderRequest.setAttribute(EmployeeWebPortletKeys.IS_SITE_EMPLOYEE, isSiteEmployee);
 
 			log.info("Employees retrieved from Elasticsearch...");
-
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			log.error("Error fetching employees from Elasticsearch", e);
 		}
 		super.render(renderRequest, renderResponse);
 	}
+	@Reference
+	protected IndexerRegistry indexerRegistry;
+	@Reference
+	protected EmployeeLocalService employeeLocalService;
+	@Reference
+	protected UserGroupRoleLocalService userGroupRoleLocalService;
+	@Reference
+	protected RoleLocalService roleLocalService;
 }

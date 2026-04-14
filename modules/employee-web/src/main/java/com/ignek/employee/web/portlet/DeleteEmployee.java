@@ -27,11 +27,6 @@ import javax.portlet.ActionResponse;
 public class DeleteEmployee extends BaseMVCActionCommand {
     private Log log = LogFactoryUtil.getLog(this.getClass().getName());
 
-    @Reference
-    EmployeeLocalService employeeLocalService;
-    @Reference
-    UserLocalService userLocalService;
-
     @Override
     protected void doProcessAction(ActionRequest actionRequest, ActionResponse actionResponse) throws Exception {
         long employeeId = ParamUtil.getLong(actionRequest, EmployeeWebPortletKeys.EMPLOYEE_ID);
@@ -42,10 +37,16 @@ public class DeleteEmployee extends BaseMVCActionCommand {
 
             Indexer<Employee> indexer = IndexerRegistryUtil.nullSafeGetIndexer(Employee.class);
             indexer.delete(employee);
+
             log.info("Employee removed from the elasticsearch document");
             log.info("Employee deleted successfully");
-        } catch (Exception e){
+        }
+        catch (Exception e){
             log.error("Failed to delete employee", e);
         }
     }
+    @Reference
+    EmployeeLocalService employeeLocalService;
+    @Reference
+    UserLocalService userLocalService;
 }
