@@ -1,9 +1,11 @@
 <%@ include file="/init.jsp" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.liferay.portal.kernel.util.ListUtil" %>
 <%@ page import="com.ignek.employee.model.Employee" %>
 
 <%
     List<Employee> employeeList = (List<Employee>) request.getAttribute("employeeList");
+    int totalEmployees = (employeeList != null) ? employeeList.size() : 0;
 %>
 
 <portlet:renderURL var="addEmployeeRenderURL">
@@ -27,59 +29,58 @@
 
     <hr />
 
-    <table class="w-100">
-      <tr class="poppins-semibold">
-        <th class="text-th-center"><liferay-ui:message key="sr-no"/></th>
-        <th><liferay-ui:message key="name"/></th>
-        <th><liferay-ui:message key="designation"/></th>
-        <th><liferay-ui:message key="phone"/></th>
-        <th><liferay-ui:message key="email"/></th>
-        <th><liferay-ui:message key="city"/></th>
-        <th class="text-th-center"><liferay-ui:message key="actions"/></th>
-      </tr>
+    <liferay-ui:search-container
+        delta="5"
+        total="<%= totalEmployees %>"
+        emptyResultsMessage="No Employees Found">
 
-      <c:forEach items="${employeeList}" var="employee" varStatus="loopStatus">
-        <portlet:resourceURL var="downloadEmployeePdfURL" id="/downloadEmployeePdf">
-            <portlet:param name="employeeId" value="${employee.employeeId}"/>
-        </portlet:resourceURL>
+        <liferay-ui:search-container-results
+            results="<%= ListUtil.subList(employeeList, searchContainer.getStart(), searchContainer.getEnd()) %>"/>
 
-        <portlet:renderURL var="updateEmployeeRenderURL">
-            <portlet:param name="mvcRenderCommandName" value="updateEmployee" />
-            <portlet:param name="employeeId" value="${employee.employeeId}" />
-        </portlet:renderURL>
+        <liferay-ui:search-container-row
+            className="com.ignek.employee.model.Employee" modelVar="employee">
 
-        <portlet:actionURL name="deleteEmployee" var="deleteEmployeeActionURL">
-            <portlet:param name="employeeId" value="${employee.employeeId}"/>
-        </portlet:actionURL>
+            <portlet:resourceURL var="downloadEmployeePdfURL" id="/downloadEmployeePdf">
+                <portlet:param name="employeeId" value="${employee.employeeId}"/>
+            </portlet:resourceURL>
 
-        <tr class="poppins-regular">
-            <td class="text-td-center">${loopStatus.count}</td>
-            <td>${employee.firstName} ${employee.lastName}</td>
-            <td>${employee.designation}</td>
-            <td>${employee.phoneNumber}</td>
-            <td>${employee.emailAddress}</td>
-            <td>${employee.city}</td>
-            <td class="text-td-center">
-              <c:if test="${not isSiteEmployee}">
-                <a href="${updateEmployeeRenderURL}" class="action-link"
-                    ><img class="action-icon-img" src="${editEmployeeIcon}" alt="#"
-                  /></a>
+            <portlet:renderURL var="updateEmployeeRenderURL">
+                <portlet:param name="mvcRenderCommandName" value="updateEmployee" />
+                <portlet:param name="employeeId" value="${employee.employeeId}" />
+            </portlet:renderURL>
 
-                  <a href="javascript:void(0);" class="action-link"
-                     onclick="openDeletePopup('${deleteEmployeeActionURL}')">
-                     <img class="action-icon-img"  src="${deleteEmployeeIcon}" alt="#"/>
-                  </a>
-              </c:if>
-              <a href="${downloadEmployeePdfURL}" target="_blank" class="action-link"
-                ><img
-                  class="action-icon-img"
-                  src="${pdfDownloadIcon}" alt="#"
-              /></a>
-            </td>
-        </tr>
-      </c:forEach>
+            <portlet:actionURL name="deleteEmployee" var="deleteEmployeeActionURL">
+                <portlet:param name="employeeId" value="${employee.employeeId}"/>
+            </portlet:actionURL>
 
-    </table>
+            <liferay-ui:search-container-column-text cssClass="text-td-center poppins-regular" name="Sr No" value="${searchContainer.start + index + 1}" />
+            <liferay-ui:search-container-column-text cssClass="poppins-regular" name="Name" value="${employee.firstName} ${employee.lastName}" />
+            <liferay-ui:search-container-column-text cssClass="poppins-regular" name="Designation" property="designation" />
+            <liferay-ui:search-container-column-text cssClass="poppins-regular" name="Phone" property="phoneNumber"/>
+            <liferay-ui:search-container-column-text cssClass="poppins-regular" name="Email" property="emailAddress"/>
+            <liferay-ui:search-container-column-text cssClass="poppins-regular" name="City" property="city"/>
+            <liferay-ui:search-container-column-text cssClass="text-td-center" name="Actions">
+                <c:if test="${not isSiteEmployee}">
+                    <a href="${updateEmployeeRenderURL}" class="action-link"
+                        ><img class="action-icon-img" src="${editEmployeeIcon}" alt="#"
+                      /></a>
+
+                    <a href="javascript:void(0);" class="action-link"
+                        onclick="openDeletePopup('${deleteEmployeeActionURL}')">
+                        <img class="action-icon-img"  src="${deleteEmployeeIcon}" alt="#"/>
+                    </a>
+                </c:if>
+
+                <a href="${downloadEmployeePdfURL}" target="_blank" class="action-link">
+                    <img
+                      class="action-icon-img"
+                      src="${pdfDownloadIcon}" alt="#"/>
+                </a>
+            </liferay-ui:search-container-column-text>
+        </liferay-ui:search-container-row>
+
+        <liferay-ui:search-iterator markupView="lexicon" />
+    </liferay-ui:search-container>
   </div>
 </div>
 

@@ -26,6 +26,12 @@
 }
 
 .employees-container{
+      .container-view {
+          padding: 0;
+      }
+      a {
+          text-decoration: none !important;
+      }
       .add-employee-btn {
         border: none;
         color: white;
@@ -45,10 +51,13 @@
       table {
         border-collapse: separate;
         border-spacing: 0 10px;
+        border: none;
       }
       th,
       td {
+        border: none;
         padding: 1rem;
+        text-wrap: nowrap;
       }
       td {
         font-size: 14px;
@@ -71,7 +80,6 @@
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
       }
-
       tr td:last-child {
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
@@ -85,6 +93,18 @@
       }
       .action-link:hover {
         text-decoration: none !important;
+      }
+      .table-striped tbody tr:nth-of-type(odd) > td,
+      .table-striped tbody tr:nth-of-type(even) > td{
+        background-color: #ffffff;
+      }
+      thead tr > th{
+        background-color: #F8F8F8;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        color: #acacac;
+        font-size: 12px;
       }
 }
 
