@@ -28,12 +28,6 @@ import java.util.Map;
 
 public class EmployeeModelListener extends BaseModelListener<Employee> {
 	private static final Log log = LogFactoryUtil.getLog(EmployeeModelListener.class);
-	@Reference
-	private ObjectDefinitionLocalService objectDefinitionLocalService;
-	@Reference
-	private ObjectEntryLocalService objectEntryLocalService;
-	@Reference
-	private UserLocalService userLocalService;
 
 	@Override
 	public void onAfterCreate(Employee model) throws ModelListenerException {
@@ -80,4 +74,10 @@ public class EmployeeModelListener extends BaseModelListener<Employee> {
 			log.info("Error occurred while generate the employee activityEntry ", e);
 		}
 	}
+	@Reference
+	private ObjectDefinitionLocalService objectDefinitionLocalService;
+	@Reference
+	private ObjectEntryLocalService objectEntryLocalService;
+	@Reference
+	private UserLocalService userLocalService;
 }

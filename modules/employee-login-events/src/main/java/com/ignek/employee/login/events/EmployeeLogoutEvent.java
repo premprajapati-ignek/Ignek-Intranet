@@ -32,15 +32,6 @@ import java.util.Map;
 public class EmployeeLogoutEvent implements LifecycleAction{
     private static final Log log = LogFactoryUtil.getLog(EmployeeLogoutEvent.class);
 
-    @Reference
-    private Portal portal;
-    @Reference
-    private GroupLocalService groupLocalService;
-    @Reference
-    private ObjectDefinitionLocalService objectDefinitionLocalService;
-    @Reference
-    private ObjectEntryLocalService objectEntryLocalService;
-
     @Override
     public void processLifecycleEvent(LifecycleEvent lifecycleEvent) throws ActionException {
         try{
@@ -72,4 +63,12 @@ public class EmployeeLogoutEvent implements LifecycleAction{
             log.info("Error occurred while generate the logout activityEntry ", e );
         }
     }
+    @Reference
+    private Portal portal;
+    @Reference
+    private GroupLocalService groupLocalService;
+    @Reference
+    private ObjectDefinitionLocalService objectDefinitionLocalService;
+    @Reference
+    private ObjectEntryLocalService objectEntryLocalService;
 }

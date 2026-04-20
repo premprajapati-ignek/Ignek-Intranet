@@ -5,6 +5,10 @@
 <%@ page import="com.ignek.employee.service.EmployeeLocalServiceUtil" %>
 
 <portlet:actionURL name="addUpdateEmployee" var="addEmployeeActionURL"/>
+<c:url var="backButtonIcon" value="/images/back-button.png" />
+<portlet:renderURL var="backToListOfEmployees">
+    <portlet:param name="mvcPath" value="/view.jsp"/>
+</portlet:renderURL>
 
 <div class="employee-form bg-white">
   <div class="m-2">
@@ -13,7 +17,12 @@
         <aui:input name="employeeId" type="hidden" value="${employee.employeeId}" />
         <div class="row employee-form-group">
           <div class="col-12">
-            <p class="form-heading poppins-bold mb-3"><liferay-ui:message key="title-employee-form"/></p>
+            <div class="d-flex align-items-center">
+                <a href="${backToListOfEmployees}">
+                    <img class="action-icon-img" src="${backButtonIcon}" alt="#"/>
+                </a>
+                <p class="form-heading poppins-bold mb-3"><liferay-ui:message key="title-employee-form"/></p>
+            </div>
           </div>
           <div class="col-6">
             <div class="form-group">

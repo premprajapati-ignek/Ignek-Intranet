@@ -5,6 +5,7 @@ import com.liferay.object.model.ObjectDefinition;
 import com.liferay.object.model.ObjectEntry;
 import com.liferay.object.service.ObjectDefinitionLocalService;
 import com.liferay.object.service.ObjectEntryLocalService;
+import com.liferay.petra.string.StringPool;
 import com.liferay.portal.kernel.events.ActionException;
 import com.liferay.portal.kernel.events.LifecycleAction;
 import com.liferay.portal.kernel.events.LifecycleEvent;
@@ -13,11 +14,14 @@ import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.model.Group;
 import com.liferay.portal.kernel.service.GroupLocalService;
 import com.liferay.portal.kernel.service.ServiceContext;
+import com.liferay.portal.kernel.struts.LastPath;
 import com.liferay.portal.kernel.util.Portal;
 import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portal.kernel.util.WebKeys;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,14 +35,6 @@ import java.util.Map;
 
 public class EmployeeLoginEvent implements LifecycleAction {
 	private static final Log log = LogFactoryUtil.getLog(EmployeeLoginEvent.class);
-	@Reference
-	private Portal portal;
-	@Reference
-	private GroupLocalService groupLocalService;
-	@Reference
-	private ObjectDefinitionLocalService objectDefinitionLocalService;
-	@Reference
-	private ObjectEntryLocalService objectEntryLocalService;
 
 	@Override
 	public void processLifecycleEvent(LifecycleEvent lifecycleEvent) throws ActionException {
@@ -71,4 +67,12 @@ public class EmployeeLoginEvent implements LifecycleAction {
 			log.info("Error occurred while generate the login activityEntry ", e);
 		}
 	}
+	@Reference
+	private Portal portal;
+	@Reference
+	private GroupLocalService groupLocalService;
+	@Reference
+	private ObjectDefinitionLocalService objectDefinitionLocalService;
+	@Reference
+	private ObjectEntryLocalService objectEntryLocalService;
 }

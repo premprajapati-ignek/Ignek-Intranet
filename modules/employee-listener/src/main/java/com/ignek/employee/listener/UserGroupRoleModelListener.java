@@ -28,12 +28,6 @@ import java.util.Map;
 
 public class UserGroupRoleModelListener extends BaseModelListener<UserGroupRole> {
     private static final Log log = LogFactoryUtil.getLog(UserGroupRoleModelListener.class);
-    @Reference
-    private UserLocalService userLocalService;
-    @Reference
-    private ObjectDefinitionLocalService objectDefinitionLocalService;
-    @Reference
-    private ObjectEntryLocalService objectEntryLocalService;
 
     @Override
     public void onAfterCreate(UserGroupRole model) throws ModelListenerException {
@@ -74,4 +68,10 @@ public class UserGroupRoleModelListener extends BaseModelListener<UserGroupRole>
             log.info("Error occurred while generate the UserGroupRole activityEntry ", e);
         }
     }
+    @Reference
+    private UserLocalService userLocalService;
+    @Reference
+    private ObjectDefinitionLocalService objectDefinitionLocalService;
+    @Reference
+    private ObjectEntryLocalService objectEntryLocalService;
 }

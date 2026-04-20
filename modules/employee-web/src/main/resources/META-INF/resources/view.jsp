@@ -30,7 +30,7 @@
     <hr />
 
     <liferay-ui:search-container
-        delta="5"
+        delta="10"
         total="<%= totalEmployees %>"
         emptyResultsMessage="No Employees Found">
 
