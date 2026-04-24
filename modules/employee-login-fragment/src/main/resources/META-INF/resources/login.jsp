@@ -8,6 +8,7 @@
 <%@ include file="/init.jsp" %>
 <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
 <liferay-theme:defineObjects />
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/main.css" type="text/css" />
 
 <c:choose>
 	<c:when test="<%= (themeDisplay != null) && themeDisplay.isSignedIn() %>">
@@ -263,92 +264,3 @@
 		</aui:script>
 	</c:otherwise>
 </c:choose>
-
-<style>
-    .custom-login-container {
-      background-color: #f0f1f1;
-      min-height: 100vh;
-      padding: 3rem 0;
-    }
-    .custom-login-container .login-display {
-      height: 95vh;
-    }
-    .custom-login-container .login-form-container {
-      padding: 0px 28px;
-      background-color: #ffffff;
-      width: 450px;
-      border-radius: 20px;
-      box-shadow: 2px 5px 10px 0px rgba(0, 0, 0, 0.1);
-    }
-    .custom-login-container .line {
-      border: 5px solid #00979e;
-      margin-right: 10px;
-    }
-    .custom-login-container .site-name {
-      text-transform: uppercase;
-      font-size: 30px;
-      padding-top: 2.5rem;
-      padding-left: 1rem;
-    }
-    .custom-login-container .signIn-heading-container {
-      margin-top: 1.5rem;
-    }
-    .custom-login-container .signIn-txt {
-      font-size: 22px;
-    }
-    .custom-login-container .signIn-description-txt {
-      font-size: 14px;
-      color: #6c6c6c;
-    }
-    .custom-login-container .signIn-form-container {
-      padding-top: 2rem;
-    }
-    .custom-login-container .signIn-form-container .panel-body {
-      padding: 0;
-    }
-    .custom-login-container .input-label-txt {
-      color: #6c6c6c;
-      font-size: 14px;
-    }
-    .custom-login-container .input-box {
-      height: 44px;
-      border: 1px solid #e5e5e5;
-    }
-    .custom-login-container .input-box::placeholder {
-      color: #cdcdcd;
-    }
-    .custom-login-container .signIn-btn {
-      margin-top: 1.3rem;
-      background-color: #00979e;
-      color: #ffffff;
-      border-radius: 4px;
-      border: none;
-      height: 44px;
-      transition: background-color 0.3s ease, transform 0.2s ease-in-out;
-    }
-    .custom-login-container .signIn-btn:hover {
-      cursor: pointer;
-      background-color: #007a80;
-    }
-    .custom-login-container .forgot-pass-txt {
-      margin: 1.5rem 0;
-    }
-    .custom-login-container .reset-pass-link {
-      padding-left: 5px;
-    }
-    .custom-login-container .reset-pass-link a {
-      color: #00979e !important;
-      text-decoration: underline;
-    }
-    .custom-login-container .reset-pass-link a:hover {
-      color: #007a80 !important;
-    }
-    #content.container.flex-fill {
-        background-color: #f0f1f1;
-        margin: 0 !important;
-        max-width: none;
-    }
-    #column-1 {
-        padding: 0 !important;
-    }
-  </style>

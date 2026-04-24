@@ -52,11 +52,3 @@ navigation = navigation.trim();
     display: none;
 }
 </style>
-
-<script>
-document.querySelectorAll('li.text-4 .taglib-text').forEach(span => {
-    if (span.textContent.trim() === 'Forgot Password') {
-        span.textContent = 'Reset Password';
-    }
-});
-</script>
