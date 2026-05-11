@@ -1,9 +1,7 @@
 package com.ignek.startup.events.constants;
 
-/**
- * @author hp
- */
 public class StartupEventsPortletKeys {
+	public static final String BANNER = "banner";
 	public static final String CAT_LIFERAY = "Liferay";
 	public static final String CAT_JAVA = "Java";
 	public static final String CAT_REACT = "React";
@@ -12,6 +10,10 @@ public class StartupEventsPortletKeys {
 	public static final String DASHBOARD_URL = "/dashboard";
 	public static final String EMPLOYEE = "Employee";
 	public static final String EMPLOYEE_URL = "/employee";
+	public static final String FOLDER_MEDIA = "media";
+	public static final String FOLDER_ARTICLE_ICON = "articleIcon";
+	public static final String FOLDER_BANNER = "banner";
+	public static final String GLOBAL_CSS ="global-css";
 	public static final String HR = "HR";
 	public static final String HR_URL = "/hr-page";
 	public static final String IGNEK_INTRANET = "Ignek Intranet";
@@ -20,6 +22,8 @@ public class StartupEventsPortletKeys {
 	public static final String LANG_FTL = "ftl";
 	public static final String LIFERAY_01 = "LIFERAY_01";
 	public static final String LIFERAY_02 = "LIFERAY_02";
+	public static final String MIME_TYPE_PNG = "image/png";
+	public static final String MIME_TYPE_JPG = "image/jpeg";
 	public static final String PORTLET_DISPLAY_TEMPLATE_CLASS =
 			"com.liferay.portlet.display.template.PortletDisplayTemplate";
 	public static final String PORTLET_ASSET_PUBLISHER =

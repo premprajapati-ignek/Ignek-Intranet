@@ -1,8 +1,11 @@
 package com.ignek.startup.events.action;
 
 import com.ignek.startup.events.constants.StartupEventsPortletKeys;
+import com.liferay.asset.kernel.model.AssetVocabulary;
 import com.liferay.dynamic.data.mapping.model.DDMStructure;
+import com.liferay.fragment.model.FragmentCollection;
 import com.liferay.journal.model.JournalFolder;
+import com.liferay.portal.kernel.repository.model.Folder;
 import com.liferay.portal.kernel.service.ClassNameLocalServiceUtil;
 import com.liferay.dynamic.data.mapping.service.DDMStructureLocalService;
 import com.liferay.dynamic.data.mapping.service.DDMTemplateLocalService;
@@ -45,6 +48,7 @@ public class ConfigurationCreator implements BundleActivator {
                 companyId, StartupEventsPortletKeys.IGNEK_INTRANET);
         long groupId = group.getGroupId();
         long userId = group.getCreatorUserId();
+
         ServiceContext serviceContext = new ServiceContext();
         serviceContext.setScopeGroupId(groupId);
         serviceContext.setCompanyId(companyId);
@@ -53,10 +57,13 @@ public class ConfigurationCreator implements BundleActivator {
         serviceContext.setAddGuestPermissions(false);
 
         long journalArticleClassNameId = ClassNameLocalServiceUtil.getClassNameId(JournalArticle.class.getName());
-
+        //site-DDMStructure
         DDMStructure structure = Structure.createCardStructure(groupId, userId, structureLocalService, serviceContext, journalArticleClassNameId);
+        long structureId = structure.getStructureId();
+        //site-DDMTemplate
         Template.createCardTemplate(groupId, userId, templateLocalService, serviceContext, journalArticleClassNameId);
 
+        //site widget template
         long portletDisplayTemplateClassNameId =
                 PortalUtil.getClassNameId(StartupEventsPortletKeys.PORTLET_DISPLAY_TEMPLATE_CLASS);
 
@@ -77,18 +84,24 @@ public class ConfigurationCreator implements BundleActivator {
                     .substring(filePath.lastIndexOf("/") + 1)
                     .replace(".ftl", "")
                     .toUpperCase();
+
             ADTTemplate.createADTTemplate(groupId, userId, templateLocalService, serviceContext,
                     portletDisplayTemplateClassNameId, classPK, filePath, templateKey);
         }
 
-        //Vocabulary and Categories
+        //Site Vocabulary
+        String vocabularyName = StartupEventsPortletKeys.TECHNOLOGIES;
+        AssetVocabulary vocabulary = Vocabulary.createVocabulary(groupId, userId, serviceContext, vocabularyName);
+        long vocabularyId = vocabulary.getVocabularyId();
+
+        //Site Categories
         List<String> categoryList = new ArrayList<>();
         categoryList.add(StartupEventsPortletKeys.CAT_LIFERAY);
         categoryList.add(StartupEventsPortletKeys.CAT_JAVA);
         categoryList.add(StartupEventsPortletKeys.CAT_REACT);
 
         for (String categoryName : categoryList){
-            Category.createCategory(groupId, userId, serviceContext, StartupEventsPortletKeys.TECHNOLOGIES, categoryName);
+            Category.createCategory(groupId, userId, serviceContext, vocabularyId, vocabularyName, categoryName);
         }
 
         //Site-Role
@@ -127,7 +140,43 @@ public class ConfigurationCreator implements BundleActivator {
         for (Map.Entry<String, String> entry : journalArticleList.entrySet()) {
             String articleId = entry.getKey();
             String filePath = entry.getValue();
-            JournalArticleWebContent.createWebContentInSite(groupId, userId, serviceContext, articleId, filePath, structure.getStructureId(), journalFolder.getFolderId());
+            JournalArticleWebContent.createWebContentInSite(groupId, userId, serviceContext, articleId, filePath, structureId, journalFolder.getFolderId());
+        }
+
+        //site-FragmentCollection
+        String fragmentSetName = StartupEventsPortletKeys.IGNEK_INTRANET;
+        FragmentCollection fragmentCollection = Fragment.createFragmentCollectionInSite(groupId, userId, fragmentSetName, serviceContext);
+
+        //Site-FragmentEntry
+        List<String> fragmentEntryKeyList = new ArrayList<>();
+        fragmentEntryKeyList.add(StartupEventsPortletKeys.BANNER);
+        fragmentEntryKeyList.add(StartupEventsPortletKeys.GLOBAL_CSS);
+        for (String fragmentEntryKey :  fragmentEntryKeyList ) {
+            Fragment.createFragmentEntryInSite(groupId, userId, fragmentCollection.getFragmentCollectionId(), fragmentEntryKey, serviceContext);
+        }
+
+        //Site-Folder
+        List<String> folderNameList = new ArrayList<>();
+        folderNameList.add(StartupEventsPortletKeys.FOLDER_ARTICLE_ICON);
+        folderNameList.add(StartupEventsPortletKeys.FOLDER_MEDIA);
+        folderNameList.add(StartupEventsPortletKeys.FOLDER_BANNER);
+        for(String folderName : folderNameList){
+            Folder folder = DocumentAndMedia.createFolder(groupId, userId, folderName, serviceContext);
+        }
+
+        //Upload images
+        Map<String, String> uploadFileList = new LinkedHashMap<>();
+        uploadFileList.put("java.png", StartupEventsPortletKeys.FOLDER_ARTICLE_ICON);
+        uploadFileList.put("liferay.png", StartupEventsPortletKeys.FOLDER_ARTICLE_ICON);
+        uploadFileList.put("react.png", StartupEventsPortletKeys.FOLDER_ARTICLE_ICON);
+        uploadFileList.put("dashboardBanner.png", StartupEventsPortletKeys.FOLDER_BANNER);
+        for (int i=1; i<=6; i++) {
+            uploadFileList.put("corporate" + i + ".jpg", StartupEventsPortletKeys.FOLDER_MEDIA);
+        }
+        for(Map.Entry<String, String> entry : uploadFileList.entrySet()){
+            String fileNameWithExtension = entry.getKey();
+            String folderName  = entry.getValue();
+            DocumentAndMedia.uploadFile(groupId, userId, fileNameWithExtension, folderName, serviceContext);
         }
     }
 

@@ -1,7 +1,6 @@
 package com.ignek.startup.events.action;
 
 import com.liferay.asset.kernel.model.AssetCategory;
-import com.liferay.asset.kernel.model.AssetVocabulary;
 import com.liferay.asset.kernel.service.AssetCategoryLocalServiceUtil;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
@@ -13,13 +12,10 @@ import java.util.Map;
 public class Category {
     private static final Log log = LogFactoryUtil.getLog(Category.class);
 
-    public static void createCategory(long groupId, long userId, ServiceContext serviceContext, String vocabularyName, String categoryName) {
+    public static void createCategory(long groupId, long userId, ServiceContext serviceContext, long vocabularyId, String vocabularyName, String categoryName) {
         try {
-            AssetVocabulary vocabulary = Vocabulary.createVocabulary(groupId, userId, serviceContext, vocabularyName);
-
             AssetCategory category = AssetCategoryLocalServiceUtil.fetchCategory(
-                    groupId, 0, categoryName,
-                    vocabulary.getVocabularyId());
+                    groupId, 0, categoryName, vocabularyId);
 
             if (category != null) {
                 log.info("Category '" + categoryName + "' already exists in vocabulary: " + vocabularyName);
@@ -36,7 +32,7 @@ public class Category {
             AssetCategoryLocalServiceUtil.addCategory(
                     null, userId, groupId,
                     0, categoryTitleMap, categoryDescriptionMap,
-                    vocabulary.getVocabularyId(), null, serviceContext);
+                    vocabularyId, null, serviceContext);
             log.info("Category successfully created.");
         } catch (Exception e) {
             log.error("Error creating category '" + categoryName + "' in site " + groupId, e);
