@@ -1,0 +1,10 @@
+{
+  "articleId": "REACT-02",
+  "ddmStructureKey": "CARD STRUCTURE",
+  "ddmTemplateKey": "CARD",
+  "folder": "Technologies",
+  "assetCategoryERCs": [
+    "REACT_CATEGORY"
+  ],
+  "name": "React"
+}

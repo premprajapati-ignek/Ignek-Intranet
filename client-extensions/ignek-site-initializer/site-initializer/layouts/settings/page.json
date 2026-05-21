@@ -1,0 +1,12 @@
+{
+  "friendlyURL": "/setting",
+  "hidden": false,
+  "name": "Setting",
+  "name_i18n": {
+    "en_US": "Setting"
+  },
+  "icon": "pageIcon/setting",
+  "private": false,
+  "system": false,
+  "type": "content"
+}

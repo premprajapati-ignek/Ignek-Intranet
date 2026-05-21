@@ -51,10 +51,11 @@
 						/>
 						<span class="user-role poppins-medium">
 							<#list siteRoles as userGroupRole>
-								<#if userGroupRole.getRole().getType() == roleConstants.TYPE_SITE>
-									${userGroupRole.getRole().getName()}
-								</#if>
-							</#list>
+                                <#if userGroupRole.getRole().getType() == roleConstants.TYPE_SITE>
+                                    ${userGroupRole.getRole().getName()}
+                                    <#break>
+                                </#if>
+                            </#list>
 						</span>
 					</div>
 					</div>
@@ -79,6 +80,7 @@
 			</div>
 		</div>
 		<div class="col-md-10 main-content-column">
+		    <#assign preferences = freeMarkerPortletPreferences.getPreferences({"portletSetupPortletDecoratorId": "barebone", "destination": "/search-page", "displayStyle": "ddmTemplate_THEME_SEARCH_BAR_TEMPLATE", "keywordsParameterName": "q", "scopeThisSite": "true"}) />
 			<div
 				class="top-search-container d-flex flex-row-reverse align-items-center"
 			>
@@ -90,7 +92,7 @@
 				/>
 				</div>
 				<div>
-					<@liferay.search_bar/>
+					<@liferay.search_bar default_preferences="${preferences}" />
 				</div>
 			</div>
 			<section id="content">

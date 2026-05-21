@@ -1,0 +1,12 @@
+{
+  "friendlyURL": "/company-hr",
+  "hidden": false,
+  "name": "HR",
+  "name_i18n": {
+    "en_US": "HR"
+  },
+  "icon": "pageIcon/employee",
+  "private": false,
+  "system": false,
+  "type": "Content"
+}

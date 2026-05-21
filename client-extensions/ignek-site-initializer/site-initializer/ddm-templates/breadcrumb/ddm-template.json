@@ -1,0 +1,6 @@
+{
+  "className": "com.liferay.portal.kernel.servlet.taglib.ui.BreadcrumbEntry",
+  "ddmTemplateKey": "BREADCRUMB",
+  "name": "Breadcrumb",
+  "resourceClassName": "com.liferay.portlet.display.template.PortletDisplayTemplate"
+}

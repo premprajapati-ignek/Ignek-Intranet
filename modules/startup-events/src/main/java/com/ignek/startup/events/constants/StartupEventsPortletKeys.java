@@ -5,7 +5,7 @@ public class StartupEventsPortletKeys {
 	public static final String CAT_LIFERAY = "Liferay";
 	public static final String CAT_JAVA = "Java";
 	public static final String CAT_REACT = "React";
-	public static final String CARD = "CARD";
+	public static final String CARD = "Card";
 	public static final String DASHBOARD = "Dashboard";
 	public static final String DASHBOARD_URL = "/dashboard";
 	public static final String EMPLOYEE = "Employee";

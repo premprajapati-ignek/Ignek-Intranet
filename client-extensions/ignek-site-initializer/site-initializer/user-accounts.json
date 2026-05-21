@@ -1,0 +1,29 @@
+[
+  {
+    "alternateName": "umang",
+    "emailAddress": "umang@liferay.com",
+    "externalReferenceCode": "UMANG",
+    "familyName": "Sharma",
+    "givenName": "Umang",
+    "name": "Umang",
+    "password": "Test@12345"
+  },
+  {
+    "alternateName": "hiten",
+    "emailAddress": "hiten@liferay.com",
+    "externalReferenceCode": "HITEN",
+    "familyName": "Patel",
+    "givenName": "Hiten",
+    "name": "Hiten",
+    "password": "Test@12345"
+  },
+  {
+    "alternateName": "simran",
+    "emailAddress": "simran@liferay.com",
+    "externalReferenceCode": "SIMRAN",
+    "familyName": "Dubey",
+    "givenName": "Simran",
+    "name": "Simran",
+    "password": "Test@12345"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "pageElement": {
+      "id": "aad11af1-39a1-df4f-fce3-878532225009",
+      "pageElements": [
+        {
+          "definition": {
+            "indexed": true,
+            "layout": {}
+          },
+          "id": "55e3833c-0afa-6f97-8f73-cad5a6acecb6",
+          "pageElements": [
+            {
+              "definition": {
+                "widgetInstance": {
+                  "widgetConfig": {},
+                  "widgetName": "com_ignek_employee_web_EmployeeWebPortlet"
+                }
+              },
+              "id": "eb0fa99c-f695-12f4-9f85-4f46eece11a0",
+              "type": "Widget"
+            }
+          ],
+          "type": "Section"
+        }
+      ],
+      "type": "Root"
+    },
+    "settings": {
+      "colorSchemeName": "01",
+      "themeName": "Ignek-intranet-theme"
+    },
+    "version": 1.1
+}

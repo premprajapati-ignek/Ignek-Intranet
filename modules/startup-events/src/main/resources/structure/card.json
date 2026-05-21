@@ -10,6 +10,7 @@
       "localizable": true,
       "repeatable": false,
       "required": true,
+      "showLabel": true,
       "label": {
         "en_US": "Title"
       },
@@ -31,6 +32,7 @@
       "localizable": true,
       "repeatable": false,
       "required": true,
+      "showLabel": true,
       "label": {
         "en_US": "Description"
       },
@@ -49,6 +51,7 @@
       "localizable": true,
       "repeatable": false,
       "required": false,
+      "showLabel": true,
       "label": {
         "en_US": "Image"
       },

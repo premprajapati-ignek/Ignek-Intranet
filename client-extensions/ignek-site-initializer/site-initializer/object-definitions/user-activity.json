@@ -1,0 +1,100 @@
+{
+  "label": {
+    "en_US": "User Activity"
+  },
+  "objectFolderExternalReferenceCode": "IGNEK_INTRANET_SITE",
+  "name": "UserActivity",
+  "objectFields": [
+    {
+      "indexed": true,
+      "localized": false,
+      "objectFieldSettings": [],
+      "readOnly": "false",
+      "DBType": "Long",
+      "label": {
+        "en_US": "Activity UserId"
+      },
+      "type": "Long",
+      "required": false,
+      "externalReferenceCode": "cda562ec-2ecc-93a0-0a24-ef649df9e1ad",
+      "indexedAsKeyword": false,
+      "system": false,
+      "indexedLanguageId": "",
+      "unique": false,
+      "name": "activityUserId",
+      "state": false,
+      "businessType": "LongInteger",
+      "readOnlyConditionExpression": ""
+    },
+    {
+      "indexed": true,
+      "localized": false,
+      "objectFieldSettings": [],
+      "readOnly": "false",
+      "DBType": "String",
+      "label": {
+        "en_US": "IP address"
+      },
+      "type": "String",
+      "required": false,
+      "externalReferenceCode": "aabfc34c-c6c6-91d9-7ab9-ea480951cdf4",
+      "indexedAsKeyword": false,
+      "system": false,
+      "indexedLanguageId": "en_US",
+      "unique": false,
+      "name": "iPAddress",
+      "state": false,
+      "businessType": "Text",
+      "readOnlyConditionExpression": ""
+    },
+    {
+      "indexed": true,
+      "localized": false,
+      "objectFieldSettings": [],
+      "readOnly": "false",
+      "DBType": "String",
+      "label": {
+        "en_US": "Details"
+      },
+      "type": "String",
+      "required": false,
+      "externalReferenceCode": "828e3770-3b19-e9f3-1958-a4a14ea4d428",
+      "indexedAsKeyword": false,
+      "system": false,
+      "indexedLanguageId": "en_US",
+      "unique": false,
+      "name": "details",
+      "state": false,
+      "businessType": "Text",
+      "readOnlyConditionExpression": ""
+    },
+    {
+      "listTypeDefinitionId": "[$LIST_TYPE_DEFINITION_ID:ACTIVITY_LIST$]",
+      "indexed": true,
+      "localized": false,
+      "objectFieldSettings": [],
+      "readOnly": "false",
+      "DBType": "String",
+      "label": {
+        "en_US": "Activity Type"
+      },
+      "type": "String",
+      "required": false,
+      "externalReferenceCode": "dd1ecb5d-94c3-1448-45ab-5ece6543a0be",
+      "indexedAsKeyword": false,
+      "system": false,
+      "indexedLanguageId": "en_US",
+      "unique": false,
+      "name": "activityType",
+      "state": false,
+      "businessType": "Picklist",
+      "readOnlyConditionExpression": ""
+    }
+  ],
+  "panelCategoryKey": "site_administration.content",
+  "pluralLabel": {
+    "en_US": "User Activities"
+  },
+  "portlet": false,
+  "scope": "site"
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "key": "activityListTypeLogin",
+    "name": "LOGIN",
+    "externalReferenceCode":"ACTIVITY_LIST_TYPE_LOGIN",
+    "type": "string"
+  },
+  {
+    "key": "activityListTypeLogout",
+    "name": "LOGOUT",
+    "externalReferenceCode":"ACTIVITY_LIST_TYPE_LOGOUT",
+    "type": "string"
+  },
+  {
+    "key": "activityListTypeInsert",
+    "name": "INSERT",
+    "externalReferenceCode":"ACTIVITY_LIST_TYPE_INSERT",
+    "type": "string"
+  },
+  {
+    "key": "activityListTypeUpdate",
+    "name": "UPDATE",
+    "externalReferenceCode":"ACTIVITY_LIST_TYPE_UPDATE",
+    "type": "string"
+  },
+  {
+    "key": "activityListTypeDelete",
+    "name": "DELETE",
+    "externalReferenceCode":"ACTIVITY_LIST_TYPE_DELETE",
+    "type": "string"
+  },
+  {
+    "key": "activityListTypeRoleAssigned",
+    "name": "ROLE_ASSIGNED",
+    "externalReferenceCode":"ACTIVITY_LIST_TYPE_ROLE_ASSIGNED",
+    "type": "string"
+  },
+  {
+    "key": "activityListTypeRoleRemoved",
+    "name": "ROLE_REMOVED",
+    "externalReferenceCode":"ACTIVITY_LIST_TYPE_ROLE_REMOVED",
+    "type": "string"
+  }
+]

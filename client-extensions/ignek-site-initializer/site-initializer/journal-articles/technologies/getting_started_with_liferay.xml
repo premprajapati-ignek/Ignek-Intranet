@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root available-locales="en_US" default-locale="en_US">
+
+    <dynamic-element name="cardTitle" field-reference="cardTitle" type="text">
+        <dynamic-content language-id="en_US"><![CDATA[Getting Started with Liferay]]></dynamic-content>
+    </dynamic-element>
+
+    <dynamic-element name="cardDescription" field-reference="cardDescription" type="rich_text">
+        <dynamic-content language-id="en_US"><![CDATA[Liferay is a powerful, open-source Digital Experience Platform (DXP) designed to create, manage, and deliver engaging websites and portals. It helps businesses build customized intranets, extranets, and customer portals without needing extensive coding knowledge. With its user-friendly content management system (CMS), you can easily publish content, create forms, and manage workflows. Liferay is highly flexible, allowing companies to tailor the platform to their specific needs and integrate it with existing systems like CRM or ERP.]]></dynamic-content>
+    </dynamic-element>
+
+    <dynamic-element name="cardImage" field-reference="cardImage" type="image">
+        <dynamic-content language-id="en_US"><![CDATA[[$DOCUMENT_JSON:/site-initializer/documents/group/articleIcon/liferay$]]]></dynamic-content>
+    </dynamic-element>
+
+</root>

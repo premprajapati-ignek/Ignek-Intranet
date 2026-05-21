@@ -1,0 +1,70 @@
+  {
+    "pageElement": {
+        "id": "6ff17d5b-0aa3-9b09-4602-59dd64043e9a",
+        "pageElements": [
+          {
+            "definition": {
+              "indexed": true,
+              "layout": {}
+            },
+            "id": "d2da35cb-0dea-b86d-518f-c1ac9aadd314",
+            "pageElements": [
+              {
+                "definition": {
+                  "fragment": {
+                    "key": "com.liferay.fragment.renderer.menu.display.internal.MenuDisplayFragmentRenderer"
+                  },
+                  "fragmentConfig": {
+                    "displayStyle": "horizontal",
+                    "selectedItemColor": "",
+                    "sublevels": "-1",
+                    "hoveredItemColor": "",
+                    "source": ""
+                  },
+                  "fragmentFields": [],
+                  "indexed": true
+                },
+                "id": "f6534566-6c71-e674-bca7-5e69940b3306",
+                "type": "Fragment"
+              },
+              {
+                "definition": {
+                  "fragment": {
+                    "key": "BASIC_COMPONENT-heading"
+                  },
+                  "fragmentConfig": {
+                    "headingLevel": "h1"
+                  },
+                  "fragmentFields": [
+                    {
+                      "id": "element-text",
+                      "value": {
+                        "fragmentLink": {},
+                        "text": {
+                          "value_i18n": {
+                            "en_US": "HR Page"
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "fragmentStyle": {
+                    "marginTop": "3"
+                  },
+                  "indexed": true
+                },
+                "id": "a1397f2f-c55c-101d-c4ed-8f4277acb358",
+                "type": "Fragment"
+              }
+            ],
+            "type": "Section"
+          }
+        ],
+        "type": "Root"
+      },
+      "settings": {
+        "colorSchemeName": "01",
+        "themeName": "Ignek-intranet-theme"
+      },
+      "version": 1.1
+  }

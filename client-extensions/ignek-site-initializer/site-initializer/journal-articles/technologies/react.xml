@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root available-locales="en_US" default-locale="en_US">
+
+    <dynamic-element name="cardTitle" field-reference="cardTitle" type="text">
+        <dynamic-content language-id="en_US"><![CDATA[React]]></dynamic-content>
+    </dynamic-element>
+
+    <dynamic-element name="cardDescription" field-reference="cardDescription" type="rich_text">
+        <dynamic-content language-id="en_US"><![CDATA[React is a popular, open-source JavaScript library developed by Facebook for building fast, dynamic, and interactive user interfaces (UIs). By focusing on a component-based architecture and using a Virtual DOM, React efficiently updates only the parts of the page that change, making it ideal for modern single-page applications (SPAs).
+
+Core Concepts of React
+
+Component-Based Architecture: React allows developers to break down UIs into small, self-contained, and reusable pieces known as components (e.g., buttons, navigation bars).
+Virtual DOM: Instead of manipulating the browser’s slow, actual DOM directly, React updates a lightweight virtual representation, calculating the minimum changes needed before updating the real DOM.
+JSX (JavaScript XML): This syntax extension allows developers to write HTML-like structures directly within JavaScript code, making component structure easier to visualize.
+One-Way Data Binding: Data flows downwards from parent to child components via props, which ensures more predictable and easier-to-debug code.
+Hooks: Introduced to allow functional components to manage state and lifecycle features (like useState and useEffect) without needing class components.
+Why Choose React?
+
+High Performance: Virtual DOM updates ensure fast rendering.
+Reusable Components: Speeds up development and maintains consistency.
+Massive Ecosystem: Supported by a large community, offering extensive libraries, tools, and documentation.
+Flexibility: It can be used for web development, and with React Native, for building native mobile applications.
+React is ideal for creating interactive, data-driven applications that require high performance and a seamless user experience.]]></dynamic-content>
+    </dynamic-element>
+
+    <dynamic-element name="cardImage" field-reference="cardImage" type="image">
+        <dynamic-content language-id="en_US"><![CDATA[[$DOCUMENT_JSON:/site-initializer/documents/group/articleIcon/react$]]]></dynamic-content>
+    </dynamic-element>
+
+</root>

@@ -8,6 +8,14 @@
     </dynamic-element>
 
     <dynamic-element name="cardImage" field-reference="cardImage" type="image">
-        <dynamic-content language-id="en_US"><![CDATA[%IMAGE_JSON%]]></dynamic-content>
+        <dynamic-content language-id="en_US"><![CDATA[{
+            "groupId": "51258",
+            "uuid": "IMAGE_UUID",
+            "title": "image.png",
+            "type": "document",
+            "fileEntryId": "FILE_ENTRY_ID"
+          }]]></dynamic-content>
     </dynamic-element>
 </root>
+
+<![CDATA[[$DOCUMENT_JSON:/site-initializer/documents/group/articleIcon/java.png$]]]>

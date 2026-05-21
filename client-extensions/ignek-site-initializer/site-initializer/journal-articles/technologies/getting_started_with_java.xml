@@ -10,7 +10,7 @@
     </dynamic-element>
 
     <dynamic-element name="cardImage" field-reference="cardImage" type="image">
-        <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content>
+        <dynamic-content language-id="en_US"><![CDATA[[$DOCUMENT_JSON:/site-initializer/documents/group/articleIcon/java$]]]></dynamic-content>
     </dynamic-element>
 
 </root>
