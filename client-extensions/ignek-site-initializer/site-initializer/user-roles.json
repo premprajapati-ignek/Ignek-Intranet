@@ -1,0 +1,10 @@
+[
+  {
+    "emailAddress": "prem.prajapati@ignek.com",
+    "roles": ["Employee"]
+  },
+  {
+    "emailAddress": "simran.dubey@ignek.com",
+    "roles": ["HR"]
+  }
+]

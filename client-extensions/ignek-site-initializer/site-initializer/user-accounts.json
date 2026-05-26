@@ -1,29 +1,20 @@
 [
   {
-    "alternateName": "umang",
-    "emailAddress": "umang@liferay.com",
-    "externalReferenceCode": "UMANG",
-    "familyName": "Sharma",
+    "alternateName": "Prem",
+    "emailAddress": "prem.prajapati@ignek.com",
+    "familyName": "Prajapati",
     "givenName": "Umang",
-    "name": "Umang",
-    "password": "Test@12345"
+    "name": "Prem Prajapati",
+    "externalReferenceCode": "PREM_USER",
+    "status": "Active"
   },
   {
-    "alternateName": "hiten",
-    "emailAddress": "hiten@liferay.com",
-    "externalReferenceCode": "HITEN",
-    "familyName": "Patel",
-    "givenName": "Hiten",
-    "name": "Hiten",
-    "password": "Test@12345"
-  },
-  {
-    "alternateName": "simran",
-    "emailAddress": "simran@liferay.com",
-    "externalReferenceCode": "SIMRAN",
+    "alternateName": "Simran",
+    "emailAddress": "simran.dubey@ignek.com",
     "familyName": "Dubey",
     "givenName": "Simran",
-    "name": "Simran",
-    "password": "Test@12345"
+    "name": "Simran Dubey",
+    "externalReferenceCode": "Simran_USER",
+    "status": "Active"
   }
 ]
