@@ -1,6 +1,7 @@
 package com.ignek.email.scheduler.configuration;
 
 import aQute.bnd.annotation.metatype.Meta;
+import com.ignek.email.scheduler.constants.EmailSchedulerPortletKeys;
 import com.liferay.portal.configuration.metatype.annotations.ExtendedObjectClassDefinition;
 
 @ExtendedObjectClassDefinition(category = "infrastructure")
@@ -13,16 +14,16 @@ import com.liferay.portal.configuration.metatype.annotations.ExtendedObjectClass
 public interface EmailSchedulerConfiguration {
     @Meta.AD(
             deflt = "1",
-            description = "Send an email notification to all employees with articles in pdf attachment",
-            name = "Email Scheduler",
+            description = EmailSchedulerPortletKeys.SCHEDULER_DESCRIPTION,
+            name = EmailSchedulerPortletKeys.EMAIL_SCHEDULER,
             required = false
     )
     public int interval();
 
     @Meta.AD(
             deflt = "Employee-News",
-            description = "Sets the categorization of the article",
-            name = "Article Category",
+            description = EmailSchedulerPortletKeys.ARTICLE_DESCRIPTION,
+            name = EmailSchedulerPortletKeys.ARTICLE_CATEGORY,
             required = false
     )
     public String categoryName();
