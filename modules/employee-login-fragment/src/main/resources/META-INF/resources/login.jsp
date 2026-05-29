@@ -63,7 +63,8 @@
                     <div class="site-name">
                         <span class="line"></span>
                         <span class="poppins-bold">
-                            <%= (themeDisplay != null) ? HtmlUtil.escape(themeDisplay.getScopeGroupName()) : "IGNEK INTRANET" %>
+                            <%-- <%= (themeDisplay != null) ? HtmlUtil.escape(themeDisplay.getScopeGroupName()) : "IGNEK INTRANET" %> --%>
+                            IGNEK INTRANET
                         </span>
                     </div>
                     <div

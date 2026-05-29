@@ -40,7 +40,6 @@ import java.util.Map;
 @Component(
         immediate = true,
         configurationPid = "com.ignek.email.scheduler.configuration.EmailSchedulerConfiguration",
-        configurationPolicy = ConfigurationPolicy.OPTIONAL,
         service = SchedulerJobConfiguration.class
 )
 
