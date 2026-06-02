@@ -16,6 +16,7 @@ import com.liferay.petra.function.UnsafeRunnable;
 import com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.messaging.DestinationNames;
 import com.liferay.portal.kernel.model.Group;
 import com.liferay.portal.kernel.model.Role;
 import com.liferay.portal.kernel.model.User;
@@ -48,6 +49,11 @@ public class EmailSchedulerJobConfiguration implements SchedulerJobConfiguration
     private static final Log log = LogFactoryUtil.getLog(EmailSchedulerJobConfiguration.class);
 
     @Override
+    public String getDestinationName() {
+        return DestinationNames.SCHEDULER_DISPATCH;
+    }
+
+    @Override
     public UnsafeRunnable<Exception> getJobExecutorUnsafeRunnable() {
         return () -> {
             try {
@@ -60,7 +66,6 @@ public class EmailSchedulerJobConfiguration implements SchedulerJobConfiguration
 
                 if (ignekSite != null) {
                     long groupId = ignekSite.getGroupId();
-                    System.out.println("Found Site GroupId : " + groupId);
                     sendEmailToEmployee(companyId, groupId, vocabularyName, categoryName);
                 }
             } catch (Exception e) {

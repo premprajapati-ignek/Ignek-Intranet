@@ -9,7 +9,6 @@ import com.liferay.portal.kernel.service.UserLocalServiceWrapper;
 import com.liferay.portal.kernel.service.ServiceWrapper;
 import org.osgi.service.component.annotations.Component;
 import java.util.Locale;
-import java.util.Map;
 
 @Component(
 		property = {
@@ -38,11 +37,5 @@ public class CustomUserLocalServiceWrapper extends UserLocalServiceWrapper {
 		}
 
 		return user;
-	}
-
-	@Override
-	public int authenticateByEmailAddress(long companyId, String emailAddress, String password, Map<String, String[]> headerMap, Map<String, String[]> parameterMap, Map<String, Object> resultsMap) throws PortalException {
-		log.info("Customizing Authentication by email Address");
-		return super.authenticateByEmailAddress(companyId, emailAddress, password, headerMap, parameterMap, resultsMap);
 	}
 }

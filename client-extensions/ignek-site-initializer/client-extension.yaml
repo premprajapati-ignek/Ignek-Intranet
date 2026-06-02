@@ -1,4 +1,4 @@
-liferay-sample-site-initializer:
+ignek-intranet-site-initializer:
   name: Ignek Intranet Site Initializer
   oAuthApplicationHeadlessServer: ignek-intranet-site-initializer-oauth-application-headless-server
   siteExternalReferenceCode: ignekIntranetSiteInitializer
