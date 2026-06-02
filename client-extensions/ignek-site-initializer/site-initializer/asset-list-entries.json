@@ -1,0 +1,12 @@
+[
+  {
+    "assetEntrySubtypeId": "[$DDM_STRUCTURE_ID:CARD STRUCTURE$]",
+    "title": "Technologies Cards",
+    "externalReferenceCode":"TECHNOLOGIES_CARDS",
+    "unicodeProperties": {
+      "anyClassType": "anyClassTypeJournalArticleAssetRendererFactory",
+      "classNameIds": "com.liferay.journal.model.JournalArticle",
+      "classTypeIds": "classTypeIdsJournalArticleAssetRendererFactory"
+    }
+  }
+]

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.ignek.employee.model.Employee">
+		<field name="uuid" type="String" />
+		<field name="employeeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="phoneNumber" type="String" />
+		<field name="addressLine1" type="String" />
+		<field name="addressLine2" type="String" />
+		<field name="city" type="String" />
+		<field name="zipCode" type="String" />
+		<field name="designation" type="String" />
+	</model>
+</model-hints>

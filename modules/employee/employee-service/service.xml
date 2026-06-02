@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.ignek.employee">
+	<namespace>Custom</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="Employee" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="employeeId" primary="true" type="long" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="firstName" type="String" />
+		<column name="lastName" type="String" />
+		<column name="emailAddress" type="String" />
+		<column name="phoneNumber" type="String" />
+		<column name="addressLine1" type="String" />
+		<column name="addressLine2" type="String" />
+		<column name="city" type="String" />
+		<column name="zipCode" type="String" />
+		<column name="designation" type="String" />
+	</entity>
+</service-builder>

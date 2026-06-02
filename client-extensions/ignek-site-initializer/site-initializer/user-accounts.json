@@ -1,0 +1,20 @@
+[
+  {
+    "alternateName": "Prem",
+    "emailAddress": "prem.prajapati@ignek.com",
+    "familyName": "Prajapati",
+    "givenName": "Umang",
+    "name": "Prem Prajapati",
+    "externalReferenceCode": "PREM_USER",
+    "status": "Active"
+  },
+  {
+    "alternateName": "Simran",
+    "emailAddress": "simran.dubey@ignek.com",
+    "familyName": "Dubey",
+    "givenName": "Simran",
+    "name": "Simran Dubey",
+    "externalReferenceCode": "Simran_USER",
+    "status": "Active"
+  }
+]

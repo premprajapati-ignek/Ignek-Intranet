@@ -1,0 +1,6 @@
+{
+  "className": "com.liferay.portal.kernel.repository.model.FileEntry",
+  "ddmTemplateKey": "MEDIA_GALLERY",
+  "name": "Media Gallery",
+  "resourceClassName": "com.liferay.portlet.display.template.PortletDisplayTemplate"
+}

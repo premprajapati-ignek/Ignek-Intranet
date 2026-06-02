@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root available-locales="en_US" default-locale="en_US">
+
+    <dynamic-element name="cardTitle" field-reference="cardTitle" type="text">
+        <dynamic-content language-id="en_US"><![CDATA[JAVA]]></dynamic-content>
+    </dynamic-element>
+
+    <dynamic-element name="cardDescription" field-reference="cardDescription" type="rich_text">
+        <dynamic-content language-id="en_US"><![CDATA[Java is a high-level, class-based, object-oriented programming language designed to have as few implementation dependencies as possible. Known for its "Write Once, Run Anywhere" (WORA) philosophy, Java code runs on any platform supported by a JVM, making it foundational for enterprise software, Android apps, and big data technologies.
+
+        Key Features of Java:
+
+        Platform Independent: Compiled Java code (bytecode) runs on all platforms with a Java Virtual Machine (JVM).
+        Object-Oriented: Supports modularity through classes, objects, and inheritance.
+        Secure and Robust: Features strong memory management, automatic garbage collection, and robust exception handling.
+        Multi-threaded: Allows concurrent execution of tasks, crucial for high-performance applications.
+        What is Java Used For?
+
+        Enterprise Applications: Backbone of large-scale banking, ERP, and backend systems.
+        Android Development: Primary language for Android apps.
+        Cloud-based Apps: Widely used for cloud-native systems.
+        Big Data: Technologies like Apache Hadoop and Kafka are built with Java.
+        Popular Applications:
+        Companies like Netflix, Amazon, LinkedIn, and Spotify use Java for their backend services.]]></dynamic-content>
+    </dynamic-element>
+
+    <dynamic-element name="cardImage" field-reference="cardImage" type="image">
+        <dynamic-content language-id="en_US"><![CDATA[[$DOCUMENT_JSON:/site-initializer/documents/group/articleIcon/java$]]]></dynamic-content>
+    </dynamic-element>
+</root>
+<!--<![CDATA[[$DOCUMENT_JSON:/site-initializer/documents/group/articleIcon/java.png$]]]>-->

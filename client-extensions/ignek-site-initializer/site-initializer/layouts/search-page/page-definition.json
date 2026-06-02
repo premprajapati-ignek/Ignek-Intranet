@@ -1,0 +1,145 @@
+{
+  "pageElement": {
+      "id": "a6817255-53a2-1857-ec38-7bc56888c536",
+      "pageElements": [
+        {
+          "definition": {
+            "indexed": true,
+            "layout": {
+              "widthType": "Fixed"
+            }
+          },
+          "id": "131fde9f-3ac6-cd9c-ee70-9a51671ee283",
+          "pageElements": [
+            {
+              "definition": {
+                "widgetInstance": {
+                  "widgetConfig": {
+                    "federatedSearchKey": "",
+                    "displayStyleGroupKey": "[$GROUP_KEY$]",
+                    "suggestionsContributorConfigurations": "{\"contributorName\":\"basic\",\"displayGroupName\":\"suggestions\",\"size\":5}",
+                    "showStagedResults": "false",
+                    "searchScope": "this-site",
+                    "suggestionsEnabled": "true",
+                    "destination": "",
+                    "invisible": "false",
+                    "displayStyleGroupId": "[$GROUP_ID$]",
+                    "suggestionsDisplayThreshold": "2",
+                    "displayStyle": "ddmTemplate_SEARCH_BAR_TEMPLATE",
+                    "scopeParameterName": "scope",
+                    "keywordsParameterName": "q",
+                    "useAdvancedSearchSyntax": "false"
+                  },
+                  "widgetName": "com_liferay_portal_search_web_search_bar_portlet_SearchBarPortlet"
+                }
+              },
+              "id": "d5107e67-68af-d61c-c94f-14634931c060",
+              "type": "Widget"
+            },
+            {
+              "definition": {
+                "widgetInstance": {
+                  "widgetConfig": {
+                    "vocabularyIds": "[$TAXONOMY_VOCABULARY_ID:Coding Languages$]",
+                    "displayStyle": "ddmTemplate_CATEGORY_FACET",
+                    "maxTerms": "10",
+                    "displayStyleGroupKey": "[$GROUP_KEY$]",
+                    "frequencyThreshold": "1",
+                    "frequenciesVisible": "true",
+                    "parameterName": "technology",
+                    "displayStyleGroupId": "[$GROUP_ID$]",
+                    "order": "count:desc"
+                  },
+                  "widgetName": "com_liferay_portal_search_web_category_facet_portlet_CategoryFacetPortlet"
+                }
+              },
+              "id": "410497c5-d271-392d-4401-dfb5cd6350ac",
+              "type": "Widget"
+            },
+            {
+              "definition": {
+                "fragmentStyle": {
+                  "marginTop": "4"
+                },
+                "widgetInstance": {
+                  "widgetConfig": {
+                    "fieldsToDisplay": "",
+                    "federatedSearchKey": "",
+                    "displayStyleGroupKey": "[$GROUP_KEY$]",
+                    "displayInDocumentForm": "true",
+                    "showEmptyResultMessage": "false",
+                    "showPagination": "true",
+                    "paginationDeltaParameterName": "delta",
+                    "displayStyleGroupId": "[$GROUP_ID$]",
+                    "highlightEnabled": "true",
+                    "viewInContext": "true",
+                    "displayStyle": "ddmTemplate_CARD_SEARCH_RESULT",
+                    "paginationDelta": "3",
+                    "paginationStartParameterName": "start"
+                  },
+                  "widgetName": "com_liferay_portal_search_web_search_results_portlet_SearchResultsPortlet"
+                }
+              },
+              "id": "441bd59d-81c8-95b8-0438-c3cf85b3966e",
+              "type": "Widget"
+            },
+            {
+              "definition": {
+                "fragmentStyle": {
+                  "hidden": true
+                },
+                "widgetInstance": {
+                  "widgetConfig": {
+                    "federatedSearchKey": "",
+                    "allowEmptySearches": "true",
+                    "basicFacetSelection": "false",
+                    "retainFacetSelections": "false"
+                  },
+                  "widgetName": "com_liferay_portal_search_web_search_options_portlet_SearchOptionsPortlet"
+                }
+              },
+              "id": "f284d9aa-0ff6-fe3b-40d2-a935550549b1",
+              "type": "Widget"
+            }
+          ],
+          "type": "Section"
+        },
+        {
+          "definition": {
+            "fragmentStyle": {
+              "hidden": true
+            },
+            "widgetInstance": {
+              "widgetConfig": {
+                "federatedSearchKey": "",
+                "displayStyleGroupKey": "[$GROUP_KEY$]",
+                "occur": "filter",
+                "invisible": "false",
+                "parameterName": "",
+                "displayStyleGroupId": "[$GROUP_ID$]",
+                "filterField": "ddmStructureKey",
+                "displayStyle": "default",
+                "immutable": "false",
+                "filterQueryType": "match",
+                "filterValue": "CARD STRUCTURE",
+                "parentQueryName": "",
+                "queryName": "",
+                "disabled": "false",
+                "customHeading": "",
+                "boost": ""
+              },
+              "widgetName": "com_liferay_portal_search_web_internal_custom_filter_portlet_CustomFilterPortlet"
+            }
+          },
+          "id": "473c274c-f878-250f-ec7a-3b3711b666aa",
+          "type": "Widget"
+        }
+      ],
+      "type": "Root"
+    },
+    "settings": {
+      "colorSchemeName": "01",
+      "themeName": "Ignek-intranet-theme"
+    },
+    "version": 1.1
+}

@@ -1,0 +1,7 @@
+Bundle-Name: employee-web
+Bundle-SymbolicName: com.ignek.employee.web
+Bundle-Version: 1.0.0
+Export-Package: com.ignek.employee.web.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

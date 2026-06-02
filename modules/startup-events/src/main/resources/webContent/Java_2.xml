@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root available-locales="en_US" default-locale="en_US">
+
+    <dynamic-element name="cardTitle" field-reference="cardTitle" type="text">
+        <dynamic-content language-id="en_US"><![CDATA[JAVA]]></dynamic-content>
+    </dynamic-element>
+
+    <dynamic-element name="cardDescription" field-reference="cardDescription" type="rich_text">
+        <dynamic-content language-id="en_US"><![CDATA[Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, laborum. Distinctio deleniti suscipit quam quo id hic veniam, eius nam a nesciunt iure animi. Recusandae expedita repellendus totam dicta odit.]]></dynamic-content>
+    </dynamic-element>
+
+    <dynamic-element name="cardImage" field-reference="cardImage" type="image">
+        <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content>
+    </dynamic-element>
+
+</root>

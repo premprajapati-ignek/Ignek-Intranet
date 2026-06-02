@@ -1,0 +1,6 @@
+{
+  "className": "com.liferay.portal.search.web.internal.result.display.context.SearchResultSummaryDisplayContext",
+  "ddmTemplateKey": "CARD_SEARCH_RESULT",
+  "name": "Technology Card Search Result",
+  "resourceClassName": "com.liferay.portlet.display.template.PortletDisplayTemplate"
+}

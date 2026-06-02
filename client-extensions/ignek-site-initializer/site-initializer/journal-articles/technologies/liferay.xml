@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<root available-locales="en_US" default-locale="en_US">
+
+    <dynamic-element name="cardTitle" field-reference="cardTitle" type="text">
+        <dynamic-content language-id="en_US"><![CDATA[What is Liferay ?]]></dynamic-content>
+    </dynamic-element>
+
+    <dynamic-element name="cardDescription" field-reference="cardDescription" type="rich_text">
+        <dynamic-content language-id="en_US"><![CDATA[Liferay is a leading open-source enterprise platform designed to build digital experiences, including websites, intranets, and customer portals. Often described as "One Platform. Endless Solutions," Liferay provides a flexible, Java-based framework that allows organizations to unify disparate systems and data into a single, cohesive user experience.
+
+Key Features of Liferay
+
+Digital Experience Platform (DXP): Enables personalized interactions across multiple channels—web, mobile, and social.
+Content Management System (CMS): A robust CMS allows for the creation, management, and display of web content, documents, and digital assets.
+Integration Capabilities: Liferay easily integrates with backend systems like CRM, ERP, and HR systems (e.g., SAP, Salesforce) to provide a unified dashboard.
+Portlets and Customization: Using modular components called "portlets," developers can build custom applications tailored to specific business requirements.
+Security and Compliance: Liferay offers enterprise-grade security, including role-based access control, SSO, and compliance with standards such as HIPAA.
+Liferay Versions
+
+Liferay DXP (Enterprise Edition): The subscription-based version targeted at large corporations requiring support, security updates, and advanced features.
+Liferay Community Edition (CE): A free, open-source version suitable for SMEs and NGOs, offering a great starting point for development.
+Primary Use Cases
+
+Customer Portals: Creating personalized self-service portals that improve customer engagement and loyalty.
+Employee Intranets: Connecting employees with tools, HR information, and collaboration spaces.
+Supplier/Partner Portals: Enhancing collaboration with external partners and streamlining business processes.
+Public Websites: Developing secure and scalable websites for various industries, including finance, government, and healthcare.
+With a strong focus on flexibility and scalability, Liferay has consistently been recognized by analysts, such as
+
+Gartner, as a leader in the digital experience platform market.]]></dynamic-content>
+    </dynamic-element>
+
+    <dynamic-element name="cardImage" field-reference="cardImage" type="image">
+        <dynamic-content language-id="en_US"><![CDATA[[$DOCUMENT_JSON:/site-initializer/documents/group/articleIcon/liferay$]]]></dynamic-content>
+    </dynamic-element>
+
+</root>

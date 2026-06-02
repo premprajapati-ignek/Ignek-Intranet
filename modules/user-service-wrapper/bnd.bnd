@@ -1,0 +1,3 @@
+Bundle-Name: user-service-wrapper
+Bundle-SymbolicName: com.ignek.portal.user.service.wrapper
+Bundle-Version: 1.0.0

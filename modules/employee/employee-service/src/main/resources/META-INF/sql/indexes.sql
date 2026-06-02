@@ -1,0 +1,1 @@
+create unique index IX_8504ADF8 on Custom_Employee (uuid_[$COLUMN_LENGTH:75$], groupId);

@@ -1,0 +1,443 @@
+{
+  "pageElement": {
+    "id": "b09a553c-d219-6fe7-f335-0aee0ca4f9e9",
+    "pageElements": [
+      {
+        "definition": {
+          "indexed": true,
+          "layout": {}
+        },
+        "id": "0b1075a0-4f7d-424a-fd1e-cc6883817fad",
+        "pageElements": [
+          {
+            "definition": {
+              "indexed": true,
+              "layout": {}
+            },
+            "id": "6f03b9ce-dcd1-a517-67e3-1fa20fa7b4b6",
+            "pageElements": [
+              {
+                "definition": {
+                  "fragment": {
+                    "key": "banner",
+                    "siteKey": "[$GROUP_KEY$]"
+                  },
+                  "fragmentConfig": {},
+                  "fragmentFields": [
+                    {
+                      "id": "banner-description",
+                      "value": {
+                        "fragmentLink": {}
+                      }
+                    },
+                    {
+                      "id": "banner-image",
+                      "value": {
+                        "fragmentImage": {
+                          "url": {
+                            "value_i18n": {}
+                          }
+                        },
+                        "fragmentLink": {}
+                      }
+                    },
+                    {
+                      "id": "banner-title",
+                      "value": {
+                        "fragmentLink": {}
+                      }
+                    }
+                  ],
+                  "indexed": true
+                },
+                "id": "b18b985c-6802-fe08-7d10-9237faf0c819",
+                "type": "Fragment"
+              }
+            ],
+            "type": "Section"
+          },
+          {
+            "definition": {
+              "indexed": true,
+              "layout": {
+                "widthType": "Fixed"
+              }
+            },
+            "id": "2cb781c4-b93a-076a-6d8e-4d64dffca4f9",
+            "pageElements": [
+              {
+                "definition": {
+                  "widgetInstance": {
+                    "widgetConfig": {
+                      "showCurrentGroup": "true",
+                      "displayStyle": "ddmTemplate_BREADCRUMB",
+                      "displayStyleGroupKey": "[$GROUP_KEY$]",
+                      "showLayout": "true",
+                      "showPortletBreadcrumb": "true",
+                      "showParentGroups": "true",
+                      "displayStyleGroupId": "[$GROUP_ID$]",
+                      "showGuestGroup": "false"
+                    },
+                    "widgetName": "com_liferay_site_navigation_breadcrumb_web_portlet_SiteNavigationBreadcrumbPortlet"
+                  }
+                },
+                "id": "3d354c0c-eed8-36d6-4570-6f49a3597020",
+                "type": "Widget"
+              },
+              {
+                "definition": {
+                  "fragmentStyle": {
+                    "paddingLeft": "8px",
+                    "paddingRight": "8px"
+                  },
+                  "gutters": false,
+                  "indexed": true,
+                  "modulesPerRow": 4,
+                  "numberOfColumns": 4,
+                  "reverseOrder": false,
+                  "rowViewports": [
+                    {
+                      "id": "landscapeMobile",
+                      "rowViewportDefinition": {
+                        "modulesPerRow": 1
+                      }
+                    },
+                    {
+                      "id": "portraitMobile",
+                      "rowViewportDefinition": {}
+                    },
+                    {
+                      "id": "tablet",
+                      "rowViewportDefinition": {}
+                    }
+                  ],
+                  "verticalAlignment": "top"
+                },
+                "id": "e8fb26e2-6fc6-12f8-06de-306b1623b8ab",
+                "pageElements": [
+                  {
+                    "definition": {
+                      "columnViewports": [
+                        {
+                          "columnViewportDefinition": {
+                            "size": 12
+                          },
+                          "id": "landscapeMobile"
+                        },
+                        {
+                          "columnViewportDefinition": {},
+                          "id": "portraitMobile"
+                        },
+                        {
+                          "columnViewportDefinition": {},
+                          "id": "tablet"
+                        }
+                      ],
+                      "size": 3
+                    },
+                    "id": "7edd4e62-ff34-7758-a46f-ee842149241b",
+                    "pageElements": [
+                      {
+                        "definition": {
+                          "widgetInstance": {
+                            "widgetConfig": {
+                              "title": "Employees"
+                            },
+                            "widgetName": "com_ignek_entity_count_EntityCountWebPortlet"
+                          }
+                        },
+                        "id": "3c8ad821-ff6f-07c4-9d3f-31b2304dd84c",
+                        "type": "Widget"
+                      }
+                    ],
+                    "type": "Column"
+                  },
+                  {
+                    "definition": {
+                      "columnViewports": [
+                        {
+                          "columnViewportDefinition": {
+                            "size": 12
+                          },
+                          "id": "landscapeMobile"
+                        },
+                        {
+                          "columnViewportDefinition": {},
+                          "id": "portraitMobile"
+                        },
+                        {
+                          "columnViewportDefinition": {},
+                          "id": "tablet"
+                        }
+                      ],
+                      "size": 3
+                    },
+                    "id": "fc8cc4d1-5eeb-6747-6d75-046478452842",
+                    "pageElements": [
+                      {
+                        "definition": {
+                          "widgetInstance": {
+                            "widgetConfig": {
+                              "title": "Technologies"
+                            },
+                            "widgetName": "com_ignek_entity_count_EntityCountWebPortlet"
+                          }
+                        },
+                        "id": "821d0ba4-c047-2ada-71a9-939e7f9dc362",
+                        "type": "Widget"
+                      }
+                    ],
+                    "type": "Column"
+                  },
+                  {
+                    "definition": {
+                      "columnViewports": [
+                        {
+                          "columnViewportDefinition": {
+                            "size": 12
+                          },
+                          "id": "landscapeMobile"
+                        },
+                        {
+                          "columnViewportDefinition": {},
+                          "id": "portraitMobile"
+                        },
+                        {
+                          "columnViewportDefinition": {},
+                          "id": "tablet"
+                        }
+                      ],
+                      "size": 3
+                    },
+                    "id": "7bbfb7e7-b28a-5475-4bc9-2a60a4b90338",
+                    "pageElements": [
+                      {
+                        "definition": {
+                          "widgetInstance": {
+                            "widgetConfig": {
+                              "title": "Images"
+                            },
+                            "widgetName": "com_ignek_entity_count_EntityCountWebPortlet"
+                          }
+                        },
+                        "id": "1b57ac19-1df7-414f-a307-d49f0a80311e",
+                        "type": "Widget"
+                      }
+                    ],
+                    "type": "Column"
+                  },
+                  {
+                    "definition": {
+                      "columnViewports": [
+                        {
+                          "columnViewportDefinition": {
+                            "size": 12
+                          },
+                          "id": "landscapeMobile"
+                        },
+                        {
+                          "columnViewportDefinition": {},
+                          "id": "portraitMobile"
+                        },
+                        {
+                          "columnViewportDefinition": {},
+                          "id": "tablet"
+                        }
+                      ],
+                      "size": 3
+                    },
+                    "id": "ee136d4f-af66-97a8-799d-08560678df74",
+                    "pageElements": [
+                      {
+                        "definition": {
+                          "widgetInstance": {
+                            "widgetConfig": {
+                              "title": "Users"
+                            },
+                            "widgetName": "com_ignek_entity_count_EntityCountWebPortlet"
+                          }
+                        },
+                        "id": "e1df7bb0-bd67-4553-9218-906ae9d29905",
+                        "type": "Widget"
+                      }
+                    ],
+                    "type": "Column"
+                  }
+                ],
+                "type": "Row"
+              },
+              {
+                "definition": {
+                  "widgetInstance": {
+                    "widgetConfig": {
+                      "displayStyle": "ddmTemplate_CATEGORY_FILTER",
+                      "displayStyleGroupKey": "[$GROUP_KEY$]",
+                      "displayStyleGroupId": "[$GROUP_ID$]",
+                      "allAssetVocabularies": "false",
+                      "assetVocabularyExternalReferenceCodes": "CODING_LANGAUGES_VOCABULARY",
+                      "assetVocabularyGroupExternalReferenceCodes": "618d327e-4eea-8de3-5c6f-8d8fb08146b5",
+                      "assetVocabularyExternalReferenceCodes_618d327e-4eea-8de3-5c6f-8d8fb08146b5": "ae9dcf03-8613-07e2-4385-45e130f9aaeb"
+                    },
+                    "widgetName": "com_liferay_asset_categories_navigation_web_portlet_AssetCategoriesNavigationPortlet"
+                  }
+                },
+                "id": "69274c6b-b1eb-a4d8-6133-4fad6fb2ad33",
+                "type": "Widget"
+              },
+              {
+                "definition": {
+                  "fragmentStyle": {
+                    "marginBottom": "1",
+                    "marginLeft": "1",
+                    "marginRight": "1",
+                    "marginTop": "1",
+                    "paddingLeft": "1",
+                    "paddingRight": "1"
+                  },
+                  "widgetInstance": {
+                    "widgetConfig": {
+                      "enableComments": "false",
+                      "emailAssetEntryAddedBody_ja_JP": "Dear [$TO_NAME$],<br /><br />\n\nThis is an autogenerated email for the [$PORTLET_NAME$] portlet.<br /><br />\n\nThe following asset entries have been added to [$PORTLET_TITLE$]: [$ASSET_ENTRIES$].<br /><br />\n\nSincerely,<br />\n[$FROM_NAME$]<br />\n[$FROM_ADDRESS$]",
+                      "enableRelatedAssets": "false",
+                      "emailAssetEntryAddedBody_de_DE": "Dear [$TO_NAME$],<br /><br />\n\nThis is an autogenerated email for the [$PORTLET_NAME$] portlet.<br /><br />\n\nThe following asset entries have been added to [$PORTLET_TITLE$]: [$ASSET_ENTRIES$].<br /><br />\n\nSincerely,<br />\n[$FROM_NAME$]<br />\n[$FROM_ADDRESS$]",
+                      "displayStyleGroupKey": "[$GROUP_KEY$]",
+                      "subtypeFieldsFilterEnabled": "false",
+                      "emailAssetEntryAddedBody_fr_FR": "Dear [$TO_NAME$],<br /><br />\n\nThis is an autogenerated email for the [$PORTLET_NAME$] portlet.<br /><br />\n\nThe following asset entries have been added to [$PORTLET_TITLE$]: [$ASSET_ENTRIES$].<br /><br />\n\nSincerely,<br />\n[$FROM_NAME$]<br />\n[$FROM_ADDRESS$]",
+                      "enableViewCountIncrement": "false",
+                      "delta": "3",
+                      "showAvailableLocales": "false",
+                      "displayStyleGroupId": "[$GROUP_ID$]",
+                      "assetLinkBehavior": "showFullContent",
+                      "emailAssetEntryAddedSubject_fi_FI": "New Asset Entries Added to [$PORTLET_TITLE$]",
+                      "displayStyle": "ddmTemplate_CARD_LIST_ADT",
+                      "selectionStyle": "asset-list",
+                      "enablePermissions": "true",
+                      "emailAssetEntryAddedBody_zh_CN": "Dear [$TO_NAME$],<br /><br />\n\nThis is an autogenerated email for the [$PORTLET_NAME$] portlet.<br /><br />\n\nThe following asset entries have been added to [$PORTLET_TITLE$]: [$ASSET_ENTRIES$].<br /><br />\n\nSincerely,<br />\n[$FROM_NAME$]<br />\n[$FROM_ADDRESS$]",
+                      "emailAssetEntryAddedSubject_ar_SA": "New Asset Entries Added to [$PORTLET_TITLE$]",
+                      "emailAssetEntryAddedSubject_de_DE": "New Asset Entries Added to [$PORTLET_TITLE$]",
+                      "emailAssetEntryAddedSubject_ca_ES": "New Asset Entries Added to [$PORTLET_TITLE$]",
+                      "emailAssetEntryAddedSubject_ja_JP": "New Asset Entries Added to [$PORTLET_TITLE$]",
+                      "enableRatings": "false",
+                      "socialBookmarksTypes": "",
+                      "emailAssetEntryAddedSubject_pt_BR": "New Asset Entries Added to [$PORTLET_TITLE$]",
+                      "emailFromName": "Prem Prajapati",
+                      "abstractLength": "200",
+                      "showMetadataDescriptions": "true",
+                      "enableFlags": "false",
+                      "emailAssetEntryAddedBody_hu_HU": "Dear [$TO_NAME$],<br /><br />\n\nThis is an autogenerated email for the [$PORTLET_NAME$] portlet.<br /><br />\n\nThe following asset entries have been added to [$PORTLET_TITLE$]: [$ASSET_ENTRIES$].<br /><br />\n\nSincerely,<br />\n[$FROM_NAME$]<br />\n[$FROM_ADDRESS$]",
+                      "showAddContentButton": "true",
+                      "emailAssetEntryAddedSubject_sv_SE": "New Asset Entries Added to [$PORTLET_TITLE$]",
+                      "emailAssetEntryAddedBody_pt_BR": "Dear [$TO_NAME$],<br /><br />\n\nThis is an autogenerated email for the [$PORTLET_NAME$] portlet.<br /><br />\n\nThe following asset entries have been added to [$PORTLET_TITLE$]: [$ASSET_ENTRIES$].<br /><br />\n\nSincerely,<br />\n[$FROM_NAME$]<br />\n[$FROM_ADDRESS$]",
+                      "notifiedAssetEntryIds": "",
+                      "emailAssetEntryAddedBody_ca_ES": "Dear [$TO_NAME$],<br /><br />\n\nThis is an autogenerated email for the [$PORTLET_NAME$] portlet.<br /><br />\n\nThe following asset entries have been added to [$PORTLET_TITLE$]: [$ASSET_ENTRIES$].<br /><br />\n\nSincerely,<br />\n[$FROM_NAME$]<br />\n[$FROM_ADDRESS$]",
+                      "emailAssetEntryAddedSubject_zh_CN": "New Asset Entries Added to [$PORTLET_TITLE$]",
+                      "showExtraInfo": "true",
+                      "infoListProviderKey": "",
+                      "showOnlyLayoutAssets": "false",
+                      "emailAssetEntryAddedSubject_nl_NL": "New Asset Entries Added to [$PORTLET_TITLE$]",
+                      "emailAssetEntryAddedSubject_es_ES": "New Asset Entries Added to [$PORTLET_TITLE$]",
+                      "mergeUrlTags": "true",
+                      "socialBookmarksDisplayStyle": "inline",
+                      "emailAssetEntryAddedEnabled": "true",
+                      "emailAssetEntryAddedBody_fi_FI": "Dear [$TO_NAME$],<br /><br />\n\nThis is an autogenerated email for the [$PORTLET_NAME$] portlet.<br /><br />\n\nThe following asset entries have been added to [$PORTLET_TITLE$]: [$ASSET_ENTRIES$].<br /><br />\n\nSincerely,<br />\n[$FROM_NAME$]<br />\n[$FROM_ADDRESS$]",
+                      "metadataFields": "author,modified-date",
+                      "showContextLink": "true",
+                      "emailAssetEntryAddedSubject_fr_FR": "New Asset Entries Added to [$PORTLET_TITLE$]",
+                      "emailAssetEntryAddedSubject_hu_HU": "New Asset Entries Added to [$PORTLET_TITLE$]",
+                      "enableCommentRatings": "false",
+                      "emailFromAddress": "prem.prajapati.ignek@gmail.com",
+                      "emailAssetEntryAddedBody_sv_SE": "Dear [$TO_NAME$],<br /><br />\n\nThis is an autogenerated email for the [$PORTLET_NAME$] portlet.<br /><br />\n\nThe following asset entries have been added to [$PORTLET_TITLE$]: [$ASSET_ENTRIES$].<br /><br />\n\nSincerely,<br />\n[$FROM_NAME$]<br />\n[$FROM_ADDRESS$]",
+                      "emailAssetEntryAddedBody_en_US": "<p>Dear [$TO_NAME$],<br />\n<br />\nThis is an autogenerated email for the [$PORTLET_NAME$] portlet.<br />\n<br />\nThe following asset entries have been added to [$PORTLET_TITLE$]: [$ASSET_ENTRIES$].<br />\n<br />\nSincerely,<br />\n[$FROM_NAME$]<br />\n[$FROM_ADDRESS$]</p>\n",
+                      "enablePrint": "false",
+                      "emailAssetEntryAddedBody_es_ES": "Dear [$TO_NAME$],<br /><br />\n\nThis is an autogenerated email for the [$PORTLET_NAME$] portlet.<br /><br />\n\nThe following asset entries have been added to [$PORTLET_TITLE$]: [$ASSET_ENTRIES$].<br /><br />\n\nSincerely,<br />\n[$FROM_NAME$]<br />\n[$FROM_ADDRESS$]",
+                      "showAssetTitle": "true",
+                      "enableSubscriptions": "false",
+                      "paginationType": "regular",
+                      "emailAssetEntryAddedBody_nl_NL": "Dear [$TO_NAME$],<br /><br />\n\nThis is an autogenerated email for the [$PORTLET_NAME$] portlet.<br /><br />\n\nThe following asset entries have been added to [$PORTLET_TITLE$]: [$ASSET_ENTRIES$].<br /><br />\n\nSincerely,<br />\n[$FROM_NAME$]<br />\n[$FROM_ADDRESS$]",
+                      "emailAssetEntryAddedBody_ar_SA": "Dear [$TO_NAME$],<br /><br />\n\nThis is an autogenerated email for the [$PORTLET_NAME$] portlet.<br /><br />\n\nThe following asset entries have been added to [$PORTLET_TITLE$]: [$ASSET_ENTRIES$].<br /><br />\n\nSincerely,<br />\n[$FROM_NAME$]<br />\n[$FROM_ADDRESS$]",
+                      "assetListEntryId": "0",
+                      "assetListEntryExternalReferenceCode": "TECHNOLOGIES_CARDS"
+                    },
+                    "widgetName": "com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet"
+                  }
+                },
+                "id": "b846a78d-5744-e385-8fa8-57db3fc875d5",
+                "type": "Widget"
+              },
+              {
+                "definition": {
+                  "widgetInstance": {
+                    "widgetConfig": {
+                      "displayStyle": "ddmTemplate_MEDIA_GALLERY",
+                      "mimeTypes": [
+                        "application/vnd+liferay.video.external.shortcut+html",
+                        "audio/basic",
+                        "audio/mid",
+                        "audio/midi",
+                        "audio/mod",
+                        "audio/mp3",
+                        "audio/mp4",
+                        "audio/mpeg",
+                        "audio/mpeg3",
+                        "audio/ogg",
+                        "audio/vnd.wave",
+                        "audio/vorbis",
+                        "audio/wav",
+                        "audio/x-m4a",
+                        "audio/x-mid",
+                        "audio/x-midi",
+                        "audio/x-mod",
+                        "audio/x-mpeg",
+                        "audio/x-pn-realaudio",
+                        "audio/x-realaudio",
+                        "audio/x-wav",
+                        "image/bmp",
+                        "image/gif",
+                        "image/jpeg",
+                        "image/pjpeg",
+                        "image/png",
+                        "image/svg+xml",
+                        "image/tiff",
+                        "image/x-citrix-jpeg",
+                        "image/x-citrix-png",
+                        "image/x-ms-bmp",
+                        "image/x-png",
+                        "image/x-tiff",
+                        "video/avi",
+                        "video/mp4",
+                        "video/mpeg",
+                        "video/ogg",
+                        "video/quicktime",
+                        "video/theora",
+                        "video/webm",
+                        "video/x-flv",
+                        "video/x-m4v",
+                        "video/x-ms-wmv",
+                        "video/x-msvideo"
+                      ],
+                      "displayStyleGroupKey": "[$GROUP_KEY$]",
+                      "selectedRepositoryId": "[$GROUP_ID$]",
+                      "rootFolderId": "33526",
+                      "displayStyleGroupId": "[$GROUP_ID$]"
+                    },
+                    "widgetName": "com_liferay_document_library_web_portlet_IGDisplayPortlet"
+                  }
+                },
+                "id": "5f2bb287-20b4-0ecf-79f2-d8f5e76eae0f",
+                "type": "Widget"
+              }
+            ],
+            "type": "Section"
+          }
+        ],
+        "type": "Section"
+      }
+    ],
+    "type": "Root"
+  },
+  "settings": {
+  "colorSchemeName": "01",
+  "themeName": "Ignek-intranet-theme"
+  },
+  "version": 1.1
+}

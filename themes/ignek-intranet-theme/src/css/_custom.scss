@@ -1,0 +1,262 @@
+/* These inject tags are used for dynamically creating imports for themelet styles, you can place them where ever you like in this file. */
+
+/* inject:imports */
+@import "liferay-font-awesome/scss/font-awesome";
+@import "liferay-font-awesome/scss/glyphicons";
+
+/* endinject */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../font/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../font/Poppins-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../font/Poppins-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../font/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../font/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../font/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../font/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../font/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../font/Poppins-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+}
+
+.portlet {
+  margin-bottom: 0;
+}
+
+.pagination-bar {
+  flex-direction: row-reverse;
+}
+.pagination-results {
+  display: none;
+}
+.page-item .page-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #262626d9;
+}
+.page-item.active .page-link {
+  background-color: #00979e;
+  color: #fff !important;
+}
+.pagination {
+  gap: 25px;
+}
+.pagination-items-per-page {
+  display: none;
+}
+
+.full-height-container {
+  height: 100vh;
+
+  .sidebar-column {
+    background-color: #f0f1f1;
+    .site-heading {
+      padding: 1rem 0;
+    }
+    .line {
+      border: 3px solid #00979e;
+    }
+    .site-name {
+      color: #000000;
+      text-wrap: nowrap;
+      font-size: 20px;
+      padding-left: 0.5rem;
+    }
+    .user-img {
+      width: 100%;
+      height: 100%;
+    }
+    .img-elips {
+      overflow: hidden;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 1px solid #c4c4c4;
+    }
+    .user-profile {
+      height: 220px;
+      padding: 0.5rem 0 1rem 0;
+      justify-content: space-evenly;
+    }
+    .user-name {
+      font-size: 17px;
+      color: #000000;
+    }
+    .user-role {
+      color: #00979e;
+      size: 14px;
+    }
+  }
+  .pages-nav-container {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      text-decoration: none;
+    }
+    .page-nav-span {
+      height: 41px;
+      background-color: #f0f1f1;
+      overflow: hidden;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #000000;
+      padding-left: 10px;
+      margin-bottom: 5px;
+    }
+    .page-nav-span:hover {
+      background-color: #00979e;
+      color: #ffffff;
+    }
+    .selected {
+      background-color: #00979e;
+      color: #ffffff;
+    }
+  }
+
+  .logout-container {
+    margin: 10px 0;
+    .logout-container-a {
+      height: 35px;
+      background-color: #f0f1f1;
+      font-size: 14px;
+      color: #000000;
+    }
+    .logout-container-a:hover {
+      color: #000000;
+    }
+  }
+
+  .main-content-column {
+    padding: 0;
+    .top-search-container {
+//       position: sticky;
+//       top: 0;
+//       z-index: 1000;
+      height: 60px;
+      background-color: #ffffff;
+      width: -webkit-fill-available;
+      .portlet {
+        margin-bottom: 0;
+      }
+    }
+    .bell-img-container {
+      width: 19px;
+      height: 23px;
+      margin-right: 36px;
+    }
+    .bell-img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+}
+
+[id*="com_ignek_employee_web_EmployeeWebPortlet"] .portlet-content {
+    background-color: #F8F8F8;
+    min-height: 550px;
+}

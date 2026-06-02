@@ -1,0 +1,66 @@
+{
+  "availableLanguageIds": ["en_US"],
+  "defaultLanguageId": "en_US",
+  "fields": [
+    {
+      "fieldReference": "cardTitle",
+      "name": "cardTitle",
+      "type": "text",
+      "dataType": "string",
+      "localizable": true,
+      "repeatable": false,
+      "required": true,
+      "showLabel": true,
+      "label": {
+        "en_US": "Title"
+      },
+      "predefinedValue": {
+        "en_US": ""
+      },
+      "tip": {
+        "en_US": ""
+      },
+      "customProperties": {
+        "displayStyle": "singleline"
+      }
+    },
+    {
+      "fieldReference": "cardDescription",
+      "name": "cardDescription",
+      "type": "rich_text",
+      "dataType": "html",
+      "localizable": true,
+      "repeatable": false,
+      "required": true,
+      "showLabel": true,
+      "label": {
+        "en_US": "Description"
+      },
+      "predefinedValue": {
+        "en_US": ""
+      },
+      "tip": {
+        "en_US": ""
+      }
+    },
+    {
+      "fieldReference": "cardImage",
+      "name": "cardImage",
+      "type": "image",
+      "dataType": "image",
+      "localizable": true,
+      "repeatable": false,
+      "required": false,
+      "showLabel": true,
+      "label": {
+        "en_US": "Image"
+      },
+      "predefinedValue": {
+        "en_US": "{}"
+      },
+      "tip": {
+        "en_US": ""
+      }
+    }
+  ]
+}

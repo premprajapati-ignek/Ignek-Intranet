@@ -1,0 +1,6 @@
+dependencies {
+	api project(":modules:employee-rest:employee-rest-api")
+	compileOnly project(":modules:employee:employee-api")
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+group = "com.ignek.employee.rest"

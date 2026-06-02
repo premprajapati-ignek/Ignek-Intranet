@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root available-locales="en_US" default-locale="en_US">
+
+    <dynamic-element name="cardTitle" field-reference="cardTitle" type="text">
+        <dynamic-content language-id="en_US"><![CDATA[Getting Started with React]]></dynamic-content>
+    </dynamic-element>
+
+    <dynamic-element name="cardDescription" field-reference="cardDescription" type="rich_text">
+        <dynamic-content language-id="en_US"><![CDATA[React is a popular JavaScript library created by Facebook for building fast, dynamic, and interactive user interfaces. It allows developers to create reusable components, making code organized and easier to manage. By using a virtual DOM, React updates only the necessary parts of the screen, which makes applications very efficient. The core of React revolves around creating components that work like functions, returning JSX to describe the UI. Getting started is easy with tools like Create React App, which sets up your environment instantly. Learning React opens up opportunities to build modern single-page applications efficiently. Start building your first component today and see how easy it is to create interactive web content.]]></dynamic-content>
+    </dynamic-element>
+
+    <dynamic-element name="cardImage" field-reference="cardImage" type="image">
+        <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content>
+    </dynamic-element>
+
+</root>

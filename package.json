@@ -1,0 +1,9 @@
+{
+    "private": true,
+    "workspaces": {
+        "packages": [
+            "client-extensions/liferay-custom-element",
+            "themes/ignek-intranet-theme"
+        ]
+    }
+}

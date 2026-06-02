@@ -1,0 +1,41 @@
+{
+  "pageElement": {
+      "id": "ef3232ff-4763-f394-3cc5-a00f320b9735",
+      "pageElements": [
+        {
+          "definition": {
+            "indexed": true,
+            "layout": {}
+          },
+          "id": "dbb10de6-0711-83dd-c754-f3b78e97f069",
+          "pageElements": [
+            {
+              "definition": {
+                "widgetInstance": {
+                  "widgetConfig": {
+                    "emailFromName": "Test Test",
+                    "emailFromAddress": "test@gmail.com",
+                    "emailPasswordResetBody_en_US": "<p>Dear [$TO_NAME$],<br />\n<br />\nYou can reset your password for [$PORTAL_URL$] at [$PASSWORD_RESET_URL$].<br />\n<br />\nThe request for a new password was made from [$REMOTE_ADDRESS$] / [$REMOTE_HOST$].<br />\n<br />\nSincerely,<br />\n[$FROM_NAME$]<br />\n[$FROM_ADDRESS$]<br />\n[$PORTAL_URL$]</p>\n",
+                    "authType": "emailAddress"
+                  },
+                  "widgetName": "com_liferay_login_web_portlet_LoginPortlet"
+                }
+              },
+              "id": "6bf3cf29-439c-ca9a-dc38-e50017aa5c17",
+              "type": "Widget"
+            }
+          ],
+          "type": "Section"
+        }
+      ],
+      "type": "Root"
+    },
+    "settings": {
+      "colorSchemeName": "01",
+      "masterPage": {
+        "key": "ignek-intranet-master"
+      },
+      "themeName": "Classic"
+    },
+    "version": 1.1
+}

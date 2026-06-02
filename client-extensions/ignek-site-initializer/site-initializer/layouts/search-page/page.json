@@ -1,0 +1,11 @@
+{
+  "friendlyURL": "/search-page",
+  "hidden": true,
+  "name": "Search Page",
+  "name_i18n": {
+    "en_US": "Search Page"
+  },
+  "private": false,
+  "system": false,
+  "type": "Content"
+}

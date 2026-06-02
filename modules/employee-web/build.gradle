@@ -1,0 +1,6 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	compileOnly project(":modules:employee:employee-api")
+	compileOnly group: "com.github.librepdf", name: "openpdf", version: "2.1.0"
+	compileInclude group: "com.github.librepdf", name: "openpdf", version: "2.1.0"
+}
