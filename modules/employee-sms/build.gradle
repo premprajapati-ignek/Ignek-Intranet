@@ -1,0 +1,6 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	compileInclude group: "com.twilio.sdk", name: "twilio", version: "8.0.0", transitive: false
+	compileInclude group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1', transitive: true
+	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.4"
+}

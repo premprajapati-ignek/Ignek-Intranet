@@ -1,0 +1,7 @@
+Bundle-Name: employee-sms
+Bundle-SymbolicName: com.ignek.employee.sms
+Bundle-Version: 1.0.0
+Export-Package: com.ignek.employee.sms.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"
