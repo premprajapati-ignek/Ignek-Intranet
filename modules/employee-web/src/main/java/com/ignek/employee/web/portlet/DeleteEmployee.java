@@ -45,6 +45,7 @@ public class DeleteEmployee extends BaseMVCActionCommand {
             log.error("Failed to delete employee", e);
         }
     }
+
     @Reference
     EmployeeLocalService employeeLocalService;
     @Reference

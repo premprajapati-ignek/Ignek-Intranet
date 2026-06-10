@@ -1,0 +1,6 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	implementation group: "org.apache.commons", name: "commons-csv", version: "1.5"
+	compileInclude group: "com.mashape.unirest", name: "unirest-java", version: "1.4.9"
+	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.4"
+}

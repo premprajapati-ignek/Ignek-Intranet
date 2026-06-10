@@ -1,0 +1,79 @@
+.settings-frame {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 18px;
+
+    .settings-form-heading {
+    font-size: 24px;
+    color: #0a111f;
+    margin-bottom: 30px;
+    }
+    .input-container {
+    position: relative;
+    margin-top: 20px;
+    }
+    .input-container input[type="text"] {
+    padding: 16px;
+    width: 692px;
+    height: 59px;
+    border: 1px solid #e6e7e9;
+    border-radius: 16px;
+    margin-bottom: 5px;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    }
+    .input-container label {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    transform: translateY(-50%);
+    padding: 0 4px;
+    background-color: white;
+    color: #6c7078;
+    font-size: 12px;
+    }
+    .input-container input[type="text"]:focus {
+    border-color: #00979e;
+    }
+    .input-container input[type="text"]:focus + label {
+    color: #00979e;
+    }
+    .send-sms-btn {
+    background-color: #ffffff;
+    width: 200px;
+    border-color: #00979e;
+    color: #00979e;
+    margin-right: 20px;
+    border-radius: 16px;
+    padding: 16px 8px;
+    font-size: 14px;
+    }
+    .send-sms-btn:hover {
+    background-color: #00979e;
+    border-color: #00979e;
+    color: #ffffff;
+    }
+    .cancle-btn {
+    font-size: 14px;
+    width: 160px;
+    background-color: #00979e;
+    border-color: #00979e;
+    border-radius: 16px;
+    padding: 16px 8px;
+    }
+    .cancle-btn:hover {
+    background-color: #007279;
+    border-color: #007279;
+    }
+    .btn-row {
+    width: 692px;
+    height: 59px;
+    margin-top: 20px;
+    }
+    .lexicon-icon {
+    fill: #e79d73;
+    width: 6px;
+    height: 18px;
+    }
+}
