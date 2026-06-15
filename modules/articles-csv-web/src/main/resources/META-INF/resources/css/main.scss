@@ -1,0 +1,15 @@
+.csv-upload-container {
+    .upload-btn {
+        font-size: 14px;
+        background-color: #00979e;
+        border-color: #00979e;
+        padding: 8px 16px;
+    }
+    .upload-btn:hover {
+        background-color: #007279;
+        border-color: #007279;
+    }
+    .form-control:not([type=range]) {
+        height: auto;
+    }
+}

@@ -1,7 +1,0 @@
-Bundle-Name: webcontent-csv-Importer
-Bundle-SymbolicName: com.ignek.webcontent.csv.importer
-Bundle-Version: 1.0.0
-Export-Package: com.ignek.webcontent.csv.importer.constants
-Provide-Capability:\
-	liferay.language.resources;\
-		resource.bundle.base.name="content.Language"

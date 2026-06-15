@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Component(
         property = {
-                "javax.portlet.name=" + EntityCountWebPortletKeys.ENTITYCOUNTWEB
+                "javax.portlet.name=" + EntityCountWebPortletKeys.ENTITY_COUNT_WEB
         },
         service = ConfigurationAction.class
 )

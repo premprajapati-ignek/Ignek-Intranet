@@ -1,5 +1,5 @@
 Bundle-Activator: com.ignek.startup.events.action.ConfigurationCreator
-Bundle-Name: startup-events
+Bundle-Name: Startup Events
 Bundle-SymbolicName: com.ignek.startup.events
 Bundle-Version: 1.0.0
 Export-Package: com.ignek.startup.events.constants

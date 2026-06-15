@@ -1,4 +1,4 @@
-Bundle-Name: employee-web
+Bundle-Name: Employee Web
 Bundle-SymbolicName: com.ignek.employee.web
 Bundle-Version: 1.0.0
 Export-Package: com.ignek.employee.web.constants
