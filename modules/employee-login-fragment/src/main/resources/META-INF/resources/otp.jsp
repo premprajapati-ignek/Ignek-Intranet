@@ -18,29 +18,48 @@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
   >
     <div class="login-form-container">
       <div class="site-name">
-        <span class="line"></span>
-        <span class="poppins-bold">IGNEK INTRANET</span>
+          <span class="line"></span>
+          <span class="poppins-bold">
+              <liferay-ui:message key="ignek-intranet" />
+          </span>
       </div>
+
       <div
-        class="signIn-heading-container d-flex flex-column justify-content-center align-items-center"
+          class="signIn-heading-container d-flex flex-column justify-content-center align-items-center"
       >
-        <span class="signIn-txt poppins-semibold">SIGN IN</span>
-        <span class="poppins-regular signIn-description-txt"
-          >Enter OTP to access your account</span
-        >
+          <span class="signIn-txt poppins-semibold">
+              <liferay-ui:message key="sign-in" />
+          </span>
+
+          <span class="poppins-regular signIn-description-txt">
+              <liferay-ui:message key="enter-otp-to-access-your-account" />
+          </span>
       </div>
+
       <div class="signIn-form-container">
-        <aui:form action="<%= verifyOTPURL %>" method="post">
-          <div class="form-group">
-            <aui:input label="OTP" cssClass="form-control poppins-regular input-box" name="otp" />
-          </div>
-          <aui:button
-            cssClass="verify-btn poppins-medium d-flex align-items-center justify-content-center w-100 mb-4"
-            name="cancelButton"
-            type="submit"
-            value="Verify OTP"
-          />
-        </aui:form>
+          <aui:form action="<%= verifyOTPURL %>" method="post">
+
+              <div class="form-group">
+                  <aui:input
+                      label="otp"
+                      placeholder="enter-otp"
+                      cssClass="form-control poppins-regular input-box"
+                      name="otp">
+
+                      <aui:validator
+                          name="required"
+                          errorMessage="please-enter-otp" />
+                  </aui:input>
+              </div>
+
+              <aui:button
+                  cssClass="verify-btn poppins-medium d-flex align-items-center justify-content-center w-100 mb-4"
+                  name="verifyButton"
+                  type="submit"
+                  value="verify-otp"
+              />
+
+          </aui:form>
       </div>
     </div>
   </div>
