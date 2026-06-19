@@ -6,10 +6,11 @@
 --%>
 
 <%@ include file="/init.jsp" %>
+<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
 <liferay-theme:defineObjects />
-<link rel="stylesheet" href="<%= request.getContextPath() %>/css/main.css" type="text/css" />
 
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css" type="text/css" />
 <c:choose>
 	<c:when test="<%= (themeDisplay != null) && themeDisplay.isSignedIn() %>">
 
@@ -63,7 +64,6 @@
                     <div class="site-name">
                         <span class="line"></span>
                         <span class="poppins-bold">
-                            <%-- <%= (themeDisplay != null) ? HtmlUtil.escape(themeDisplay.getScopeGroupName()) : "IGNEK INTRANET" %> --%>
                             IGNEK INTRANET
                         </span>
                     </div>
@@ -205,12 +205,20 @@
                                 </c:if> -->
                             </aui:fieldset>
 
+                            <liferay-captcha:captcha />
+                            <liferay-ui:error key="otp-expired" />
+                            <liferay-ui:error key="invalid-otp" />
+                            <liferay-ui:error key="session-expired" />
+                            <liferay-ui:error key="user-not-found" />
+                            <liferay-ui:error key="otp-verification-error" />
+                            <liferay-ui:error key="captcha-error" />
+
                             <aui:button-row>
                                 <aui:button cssClass="signIn-btn poppins-medium d-flex align-items-center justify-content-center w-100" type="submit" value="sign-in" />
                             </aui:button-row>
                         </aui:form>
                         <div
-                        class="poppins-regular forgot-pass-txt d-flex align-items-center justify-content-center"
+                        class="poppins-regular d-flex align-items-center justify-content-center"
                         >
                         <liferay-ui:message key="forgot-password-message" />
                         <span class="reset-pass-link poppins-semibold"

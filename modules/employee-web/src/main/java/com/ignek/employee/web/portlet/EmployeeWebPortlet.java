@@ -26,13 +26,13 @@ import java.util.List;
 
 @Component(
 		property = {
-				"com.liferay.portlet.display-category=category.sample",
+				"com.liferay.portlet.display-category=IGNEK_INTRANET",
 				"com.liferay.portlet.header-portlet-css=/css/main.css",
 				"com.liferay.portlet.instanceable=true",
 				"javax.portlet.display-name=EmployeeWeb",
 				"javax.portlet.init-param.template-path=/",
 				"javax.portlet.init-param.view-template=/view.jsp",
-				"javax.portlet.name=" + EmployeeWebPortletKeys.EMPLOYEEWEB,
+				"javax.portlet.name=" + EmployeeWebPortletKeys.EMPLOYEE_WEB,
 				"javax.portlet.resource-bundle=content.Language",
 				"javax.portlet.security-role-ref=power-user,user"
 		},

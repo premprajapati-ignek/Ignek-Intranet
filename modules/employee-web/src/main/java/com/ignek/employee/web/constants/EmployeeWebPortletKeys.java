@@ -2,7 +2,7 @@ package com.ignek.employee.web.constants;
 
 public class EmployeeWebPortletKeys {
 
-	public static final String EMPLOYEEWEB = "com_ignek_employee_web_EmployeeWebPortlet";
+	public static final String EMPLOYEE_WEB = "com_ignek_employee_web_EmployeeWebPortlet";
 	public static final String ADD_UPDATE_EMPLOYEE = "addUpdateEmployee";
 	public static final String ADDRESS_LINE_1 = "addressLine1";
 	public static final String ADDRESS_LINE_2 = "addressLine2";
