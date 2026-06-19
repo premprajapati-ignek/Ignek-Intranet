@@ -206,12 +206,12 @@
                             </aui:fieldset>
 
                             <liferay-captcha:captcha />
-                            <liferay-ui:error key="otp-expired" message="The One-Time OTP has expired. Please request a new one." />
-                            <liferay-ui:error key="invalid-otp" message="The One-Time OTP you entered is incorrect. Please check and try again." />
-                            <liferay-ui:error key="session-expired" message="Your session has expired due to inactivity. Please log in again." />
-                            <liferay-ui:error key="user-not-found" message="No account matches the provided details. Please verify the information." />
-                            <liferay-ui:error key="otp-verification-error" message="An error occurred while verifying your One-Time Password. Please try again later." />
-                            <liferay-ui:error key="captcha-error" message="The CAPTCHA text you entered is incorrect. Please try again." />
+                            <liferay-ui:error key="otp-expired" />
+                            <liferay-ui:error key="invalid-otp" />
+                            <liferay-ui:error key="session-expired" />
+                            <liferay-ui:error key="user-not-found" />
+                            <liferay-ui:error key="otp-verification-error" />
+                            <liferay-ui:error key="captcha-error" />
 
                             <aui:button-row>
                                 <aui:button cssClass="signIn-btn poppins-medium d-flex align-items-center justify-content-center w-100" type="submit" value="sign-in" />

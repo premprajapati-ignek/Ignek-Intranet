@@ -1,0 +1,6 @@
+{
+  "className": "com.liferay.portal.search.web.internal.search.bar.portlet.SearchBarPortlet",
+  "ddmTemplateKey": "GLOBAL_SEARCHBAR_TEMPLATE",
+  "name": "Global Searchbar",
+  "resourceClassName": "com.liferay.portlet.display.template.PortletDisplayTemplate"
+}

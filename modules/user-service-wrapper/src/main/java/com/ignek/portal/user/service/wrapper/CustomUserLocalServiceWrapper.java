@@ -31,7 +31,7 @@ public class CustomUserLocalServiceWrapper extends UserLocalServiceWrapper {
 		boolean isEmployee = emailAddress.endsWith("@ignek.com") || emailAddress.endsWith(".ignek@gmail.com");
 
 		try{
-			user.getExpandoBridge().setAttribute("Flag", isEmployee);
+			user.getExpandoBridge().setAttribute("isEmployee", isEmployee);
 		} catch (Exception e) {
 			log.error("Failed to set expando bridge attribute", e);
 		}
